@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .toggle-row {
+        display: grid;
+        gap: 10px;
+        margin-top: 8px;
+    }
+
+    .toggle-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(13, 17, 48, 0.72);
+    }
+
+    .toggle-item span {
+        font-size: 14px;
+        color: #e4ebff;
+    }
+
+    .switch {
+        appearance: none;
+        width: 48px;
+        height: 26px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 209, 255, 0.6);
+        background: rgba(8, 14, 38, 0.9);
+        position: relative;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .switch::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        top: 3px;
+        left: 4px;
+        background: #d8ecff;
+        transition: transform 0.2s ease;
+    }
+
+    .switch:checked {
+        background: linear-gradient(120deg, #6d5cff, #00d1ff);
+        border-color: rgba(0, 209, 255, 0.9);
+    }
+
+    .switch:checked::after {
+        transform: translateX(21px);
+        background: #eef4ff;
+    }
+</style>
+<section class="topbar">
+    <h1>Online Exam Launch</h1>
+    <p>Select a subject and pattern to start a timed online exam session.</p>
+</section>
+
+<section class="panel">
+    <form action="/exam" method="post">
+        <div class="grid-two">
+            <div>
+                <label for="exam-subject">Subject</label>
+                <select id="exam-subject" name="subject" required>
+                    {% for sub in subjects %}
+                    <option value="{{ sub }}">{{ sub }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="exam-pattern">Pattern</label>
+                <select id="exam-pattern" name="pattern" required>
+                    <option value="regular">Regular (100 Marks)</option>
+                    <option value="75">Mid-Sem (75 Marks)</option>
+                    <option value="cia50">CIA (50 Marks)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid-two" style="margin-top:14px;">
+            <div>
+                <label for="difficulty-focus">Difficulty Focus</label>
+                <input id="difficulty-focus" name="difficulty_focus" type="range" min="0" max="100" value="55">
+            </div>
+            <div>
+                <label for="ai-weight">AI Selection Weight</label>
+                <input id="ai-weight" name="ai_weight" type="range" min="0" max="100" value="72">
+            </div>
+        </div>
+
+        <div class="grid-two" style="margin-top:14px;">
+            <div>
+                <label for="unit-coverage">Unit Coverage Strength</label>
+                <input id="unit-coverage" name="unit_coverage" type="range" min="0" max="100" value="80">
+            </div>
+            <div>
+                <label>Smart Toggles</label>
+                <div class="toggle-row">
+                    <div class="toggle-item">
+                        <span>Chapter Balance</span>
+                        <input class="switch" name="chapter_balance" type="checkbox" checked>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Question Diversity</span>
+                        <input class="switch" name="question_diversity" type="checkbox" checked>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Strict Blueprint Mode</span>
+                        <input class="switch" name="strict_blueprint" type="checkbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+        <button class="button button-primary" type="submit">Start Exam Session</button>
+    </form>
+</section>
+{% endblock %}
+

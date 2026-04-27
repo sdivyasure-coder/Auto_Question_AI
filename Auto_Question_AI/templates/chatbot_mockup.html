@@ -1,0 +1,661 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .chat-modern {
+        --chat-bg-start: #0f1115;
+        --chat-bg-end: #1a1d24;
+        --chat-surface: rgba(255, 255, 255, 0.06);
+        --chat-border: rgba(255, 255, 255, 0.12);
+        --chat-text: #f5f7fb;
+        --chat-muted: #a8b0bf;
+        --chat-accent: #10b981;
+        --chat-ring: rgba(16, 185, 129, 0.38);
+        max-width: 980px;
+        margin: 0 auto;
+        display: grid;
+        gap: 14px;
+    }
+
+    .chat-modern-hero {
+        text-align: center;
+        padding: 12px 10px 4px;
+    }
+
+    .chat-modern-title {
+        margin: 0;
+        color: var(--chat-text);
+        font-size: clamp(1.8rem, 3.4vw, 2.75rem);
+        font-weight: 600;
+        letter-spacing: 0.2px;
+    }
+
+    .chat-modern-window {
+        border: 1px solid var(--chat-border);
+        border-radius: 28px;
+        background:
+            radial-gradient(circle at 14% 8%, rgba(16, 185, 129, 0.14), transparent 34%),
+            linear-gradient(160deg, var(--chat-bg-start), var(--chat-bg-end));
+        backdrop-filter: blur(12px);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+    }
+
+    .chat-modern-log {
+        min-height: 340px;
+        max-height: 58vh;
+        overflow-y: auto;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .chat-bubble {
+        max-width: min(72ch, 86%);
+        border: 1px solid var(--chat-border);
+        border-radius: 18px;
+        padding: 12px 14px;
+        color: var(--chat-text);
+        line-height: 1.45;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    .chat-bubble-user {
+        margin-left: auto;
+        background: rgba(16, 185, 129, 0.17);
+    }
+
+    .chat-bubble-ai {
+        margin-right: auto;
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    .chat-bubble-content p {
+        margin: 0 0 8px;
+    }
+
+    .chat-bubble-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .chat-bubble-content ul {
+        margin: 0;
+        padding-left: 18px;
+    }
+
+    .chat-bubble-content li {
+        margin: 0 0 4px;
+    }
+
+    .chat-modern-compose {
+        position: relative;
+        padding: 8px 14px 10px;
+        border-top: 1px solid var(--chat-border);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    }
+
+    .chat-modern-inputbar {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        align-items: center;
+        gap: 8px;
+        min-height: 54px;
+        padding: 7px;
+        border: 1px solid var(--chat-border);
+        border-radius: 999px;
+        background: var(--chat-surface);
+        backdrop-filter: blur(6px);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .chat-modern-inputbar:focus-within {
+        border-color: var(--chat-ring);
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+    }
+
+    .chat-modern-iconbtn {
+        width: 38px;
+        height: 38px;
+        border: 1px solid var(--chat-border);
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--chat-muted);
+        background: rgba(255, 255, 255, 0.03);
+        cursor: pointer;
+        transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .chat-modern-iconbtn:hover,
+    .chat-modern-iconbtn:focus-visible {
+        color: var(--chat-text);
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-1px);
+        outline: none;
+    }
+
+    .chat-modern-send {
+        color: #ffffff;
+        border-color: rgba(16, 185, 129, 0.5);
+        background: linear-gradient(145deg, #10b981, #0d9f71);
+    }
+
+    .chat-modern-send:hover,
+    .chat-modern-send:focus-visible {
+        border-color: rgba(16, 185, 129, 0.9);
+        background: linear-gradient(145deg, #16c98e, #0fab7a);
+    }
+
+    .chat-modern-send:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .chat-modern-input {
+        width: 100%;
+        min-width: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: var(--chat-text);
+        font-size: 1rem;
+        line-height: 1.35;
+        padding: 0 4px;
+    }
+
+    .chat-modern-input::placeholder {
+        color: var(--chat-muted);
+    }
+
+    .chat-modern-menu {
+        position: absolute;
+        left: 0;
+        bottom: calc(100% + 10px);
+        width: min(280px, calc(100vw - 44px));
+        border: 1px solid var(--chat-border);
+        border-radius: 16px;
+        background: linear-gradient(165deg, #23262d, #1a1d24);
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        display: grid;
+        gap: 6px;
+        z-index: 40;
+    }
+
+    .chat-modern-menu[hidden] {
+        display: none;
+    }
+
+    .chat-modern-menu button {
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: transparent;
+        color: var(--chat-text);
+        text-align: left;
+        padding: 8px 10px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .chat-modern-menu button:hover,
+    .chat-modern-menu button:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        outline: none;
+    }
+
+    .chat-modern-meta {
+        margin-top: 8px;
+        color: var(--chat-muted);
+        font-size: 0.82rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .chat-status {
+        padding: 8px 16px 14px;
+        color: var(--chat-muted);
+        font-size: 0.88rem;
+        min-height: 36px;
+    }
+
+    @media (max-width: 760px) {
+        .chat-modern-log {
+            min-height: 300px;
+            max-height: 52vh;
+            padding: 14px;
+        }
+
+        .chat-modern-compose {
+            padding: 8px 10px 10px;
+        }
+
+        .chat-modern-inputbar {
+            min-height: 50px;
+            gap: 6px;
+            padding: 6px;
+        }
+
+        .chat-modern-iconbtn {
+            width: 36px;
+            height: 36px;
+        }
+
+        .chat-modern-menu {
+            left: -4px;
+            width: min(260px, calc(100vw - 34px));
+        }
+    }
+</style>
+
+<section class="topbar chat-modern">
+    <div class="chat-modern-hero">
+        <h1 class="chat-modern-title">What can I help with?</h1>
+    </div>
+</section>
+
+<section class="chat-modern" aria-label="Chat assistant">
+    <div class="chat-modern-window">
+        <main class="chat-modern-log" id="chat-log" aria-live="polite">
+            <div class="chat-bubble chat-bubble-ai">
+                <div class="chat-bubble-content">
+                    <p>Hello. Tell me your subject, unit, and marks, and I will help you prepare.</p>
+                    <p>Example: Give 5 questions from CNCC unit 2 for 7 marks.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="chat-modern-compose">
+            <div class="chat-modern-inputbar">
+                <div style="position: relative;">
+                    <button id="chat-plus" class="chat-modern-iconbtn" type="button" aria-label="Open add menu" aria-haspopup="menu" aria-controls="chat-plus-menu" aria-expanded="false">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div id="chat-plus-menu" class="chat-modern-menu" role="menu" aria-label="Add content menu" hidden>
+                        <button id="chat-menu-upload" type="button" role="menuitem">Add photos &amp; files</button>
+                        <button id="chat-menu-screenshot" type="button" role="menuitem">Take screenshot</button>
+                        <button id="chat-menu-photo" type="button" role="menuitem">Take photo</button>
+                    </div>
+                </div>
+
+                <input id="chat-input" class="chat-modern-input" type="text" maxlength="500" placeholder="Ask anything" aria-label="Ask anything" />
+
+                <button id="chat-mic" class="chat-modern-iconbtn" type="button" aria-label="Use voice input">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 15a3 3 0 0 0 3-3V7a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M19 11v1a7 7 0 1 1-14 0v-1M12 19v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+                <button id="chat-send" class="chat-modern-iconbtn chat-modern-send" type="button" aria-label="Send message" disabled>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 19V5M12 5l-5 5M12 5l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <input id="chat-files" type="file" multiple accept="image/*,.pdf,.pptx,.docx,.txt,.md,.csv,.json,.py,.html,.css,.js" hidden>
+            <input id="chat-photo" type="file" accept="image/*" capture="environment" hidden>
+
+            <div class="chat-modern-meta">
+                <span id="chat-files-list">No files selected</span>
+                <span id="chat-count">0/500</span>
+            </div>
+        </footer>
+
+        <div class="chat-status" id="chat-status"></div>
+    </div>
+</section>
+
+<script>
+(function () {
+    const log = document.getElementById("chat-log");
+    const input = document.getElementById("chat-input");
+    const sendBtn = document.getElementById("chat-send");
+    const status = document.getElementById("chat-status");
+    const count = document.getElementById("chat-count");
+    const fileInput = document.getElementById("chat-files");
+    const photoInput = document.getElementById("chat-photo");
+    const fileList = document.getElementById("chat-files-list");
+    const plusBtn = document.getElementById("chat-plus");
+    const plusMenu = document.getElementById("chat-plus-menu");
+    const menuUpload = document.getElementById("chat-menu-upload");
+    const menuScreenshot = document.getElementById("chat-menu-screenshot");
+    const menuPhoto = document.getElementById("chat-menu-photo");
+    const micBtn = document.getElementById("chat-mic");
+
+    const history = [];
+    let selectedFiles = [];
+
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+    }
+
+    function formatAssistantReply(text) {
+        const lines = String(text || "").split(/\r?\n/);
+        const chunks = [];
+        let listItems = [];
+
+        function flushList() {
+            if (!listItems.length) return;
+            const items = listItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+            chunks.push(`<ul>${items}</ul>`);
+            listItems = [];
+        }
+
+        for (const raw of lines) {
+            const line = raw.trim();
+            if (!line) {
+                flushList();
+                continue;
+            }
+            if (line.startsWith("- ")) {
+                listItems.push(line.slice(2).trim());
+                continue;
+            }
+            flushList();
+            chunks.push(`<p>${escapeHtml(line)}</p>`);
+        }
+        flushList();
+        if (!chunks.length) return `<p>${escapeHtml(text)}</p>`;
+        return chunks.join("");
+    }
+
+    function appendBubble(text, isUser) {
+        const div = document.createElement("div");
+        div.className = "chat-bubble " + (isUser ? "chat-bubble-user" : "chat-bubble-ai");
+        const content = document.createElement("div");
+        content.className = "chat-bubble-content";
+        if (isUser) {
+            content.textContent = text;
+        } else {
+            content.innerHTML = formatAssistantReply(text);
+        }
+        div.appendChild(content);
+        log.appendChild(div);
+        log.scrollTop = log.scrollHeight;
+    }
+
+    function setTyping(show) {
+        const existing = document.getElementById("chat-typing");
+        if (show && !existing) {
+            const div = document.createElement("div");
+            div.id = "chat-typing";
+            div.className = "chat-bubble chat-bubble-ai";
+            div.textContent = "Assistant is thinking...";
+            log.appendChild(div);
+            log.scrollTop = log.scrollHeight;
+        }
+        if (!show && existing) {
+            existing.remove();
+        }
+    }
+
+    function closeMenu() {
+        plusMenu.hidden = true;
+        plusBtn.setAttribute("aria-expanded", "false");
+    }
+
+    function openMenu() {
+        plusMenu.hidden = false;
+        plusBtn.setAttribute("aria-expanded", "true");
+        const first = plusMenu.querySelector("button");
+        if (first) first.focus();
+    }
+
+    function toggleMenu() {
+        if (plusMenu.hidden) {
+            openMenu();
+        } else {
+            closeMenu();
+            plusBtn.focus();
+        }
+    }
+
+    function updateCount() {
+        const max = Number(input.getAttribute("maxlength")) || 500;
+        count.textContent = `${input.value.length}/${max}`;
+    }
+
+    function updateSendState() {
+        sendBtn.disabled = !(input.value.trim() || selectedFiles.length);
+    }
+
+    function uniqueFiles(files) {
+        const seen = new Set();
+        const merged = [];
+        for (const f of files) {
+            const key = `${f.name}:${f.size}:${f.lastModified}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            merged.push(f);
+        }
+        return merged;
+    }
+
+    function updateFileList() {
+        if (!selectedFiles.length) {
+            fileList.textContent = "No files selected";
+            return;
+        }
+        fileList.textContent = selectedFiles.map((f) => f.name).join(", ");
+    }
+
+    function addSelected(files) {
+        selectedFiles = uniqueFiles(selectedFiles.concat(Array.from(files || [])));
+        updateFileList();
+        updateSendState();
+    }
+
+    function describeAttachmentUsage(meta) {
+        if (!meta) return "";
+        const textCount = Number(meta.text_count || 0);
+        const images = Array.isArray(meta.images) ? meta.images.length : 0;
+        const others = Array.isArray(meta.others) ? meta.others.length : 0;
+        const parts = [];
+        if (textCount > 0) parts.push(`${textCount} text file(s) read`);
+        if (images > 0) parts.push(`${images} image file(s) attached`);
+        if (others > 0) parts.push(`${others} file(s) metadata only`);
+        if (!parts.length) return "";
+        let note = "";
+        if (others > 0) {
+            const first = String(meta.others[0] || "").trim();
+            if (first) note = ` Note: ${first}.`;
+        }
+        return `Files used: ${parts.join(", ")}.${note}`;
+    }
+
+    async function send() {
+        const message = input.value.trim();
+        if (!message && !selectedFiles.length) return;
+
+        const effectiveMessage = message || "Analyze uploaded attachments.";
+        const fileLine = selectedFiles.length ? `\n[Attached: ${selectedFiles.map((f) => f.name).join(", ")}]` : "";
+
+        appendBubble(effectiveMessage + fileLine, true);
+        history.push({ role: "user", content: effectiveMessage });
+
+        input.value = "";
+        updateCount();
+        sendBtn.disabled = true;
+        status.textContent = "Sending...";
+        setTyping(true);
+
+        try {
+            const formData = new FormData();
+            formData.append("message", effectiveMessage);
+            formData.append("history", JSON.stringify(history));
+            selectedFiles.forEach((file) => formData.append("attachments", file));
+
+            const res = await fetch("/chat", {
+                method: "POST",
+                body: formData
+            });
+
+            let data = null;
+            try {
+                data = await res.json();
+            } catch (_err) {
+                data = null;
+            }
+            setTyping(false);
+
+            if (!res.ok || !data || data.status !== "success") {
+                const backendMessage = data && data.message ? String(data.message).trim() : "";
+                appendBubble(backendMessage || "Unable to process the request right now.", false);
+            } else {
+                const reply = (data.data && data.data.reply) ? data.data.reply : "No response received.";
+                appendBubble(reply, false);
+                history.push({ role: "assistant", content: reply });
+                const usage = describeAttachmentUsage(data.data && data.data.attachments);
+                status.textContent = usage || "";
+            }
+        } catch (err) {
+            setTyping(false);
+            appendBubble("Network error. Please try again.", false);
+        } finally {
+            selectedFiles = [];
+            if (fileInput) fileInput.value = "";
+            if (photoInput) photoInput.value = "";
+            updateFileList();
+            updateSendState();
+            if (status.textContent === "Sending...") {
+                status.textContent = "";
+            }
+            input.focus();
+        }
+    }
+
+    plusBtn.addEventListener("click", toggleMenu);
+
+    document.addEventListener("click", function (event) {
+        const target = event.target;
+        if (!(target instanceof Node)) return;
+        if (plusMenu.hidden) return;
+        if (plusMenu.contains(target) || plusBtn.contains(target)) return;
+        closeMenu();
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            if (!plusMenu.hidden) {
+                closeMenu();
+                plusBtn.focus();
+            }
+        }
+    });
+
+    plusMenu.addEventListener("keydown", function (event) {
+        if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+        event.preventDefault();
+        const items = Array.from(plusMenu.querySelectorAll("button"));
+        const currentIndex = items.indexOf(document.activeElement);
+        if (currentIndex < 0) return;
+        const nextIndex = event.key === "ArrowDown"
+            ? (currentIndex + 1) % items.length
+            : (currentIndex - 1 + items.length) % items.length;
+        items[nextIndex].focus();
+    });
+
+    menuUpload.addEventListener("click", function () {
+        closeMenu();
+        fileInput.value = "";
+        fileInput.click();
+    });
+
+    menuScreenshot.addEventListener("click", function () {
+        closeMenu();
+        status.textContent = "Select a screenshot file to upload.";
+        fileInput.value = "";
+        fileInput.click();
+    });
+
+    menuPhoto.addEventListener("click", function () {
+        closeMenu();
+        photoInput.value = "";
+        photoInput.click();
+    });
+
+    fileInput.addEventListener("change", function () {
+        addSelected(fileInput.files);
+    });
+
+    photoInput.addEventListener("change", function () {
+        addSelected(photoInput.files);
+    });
+
+    input.addEventListener("input", function () {
+        updateCount();
+        updateSendState();
+    });
+
+    input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            send();
+        }
+    });
+
+    sendBtn.addEventListener("click", send);
+
+    micBtn.addEventListener("click", function () {
+        const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!Recognition) {
+            status.textContent = "Voice input is not supported in this browser.";
+            return;
+        }
+
+        const recognition = new Recognition();
+        recognition.lang = "en-US";
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        status.textContent = "Listening...";
+
+        recognition.onresult = function (event) {
+            const transcript = event.results && event.results[0] && event.results[0][0]
+                ? event.results[0][0].transcript
+                : "";
+            if (transcript) {
+                input.value = transcript;
+                updateCount();
+                updateSendState();
+            }
+            status.textContent = "";
+        };
+
+        recognition.onerror = function () {
+            status.textContent = "Microphone input failed.";
+        };
+
+        recognition.onend = function () {
+            if (status.textContent === "Listening...") {
+                status.textContent = "";
+            }
+        };
+
+        recognition.start();
+    });
+
+    updateCount();
+    updateFileList();
+    updateSendState();
+})();
+</script>
+{% endblock %}

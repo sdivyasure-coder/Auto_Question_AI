@@ -1,0 +1,1534 @@
+chapter,question,mark,subject,source,usage_freq
+1,Describe Android and its basic concept.,2,MA,bank,-
+1,Identify the founders of Android Inc.,2,MA,bank,-
+1,State the meaning of Open Handset Alliance (OHA).,2,MA,bank,-
+1,Outline the structure of the Android ecosystem.,2,MA,bank,-
+1,Mention any two key features of Android.,2,MA,bank,-
+1,State the purpose of Android API.,2,MA,bank,-
+1,Briefly state the role of middleware in Android.,2,MA,bank,-
+1,State the function of Linux Kernel in Android.,2,MA,bank,-
+1,State the purpose of Dalvik Virtual Machine.,2,MA,bank,-
+1,What is meant by an APK file?,2,MA,bank,-
+1,Elaborate on the important features of Android.,7,MA,bank,-
+1,Describe the Android ecosystem with a neat diagram.,7,MA,bank,-
+1,Discuss the Open Handset Alliance and its members.,7,MA,bank,-
+1,Outline the layers of Android architecture.,7,MA,bank,-
+1,Write a descriptive note on Android API levels.,7,MA,bank,-
+1,Discuss the responsibilities of Linux Kernel in Android.,7,MA,bank,-
+1,Illustrate Dalvik Virtual Machine with a diagram.,7,MA,bank,-
+1,Analyze Android architecture in detail with a neat diagram.,15,MA,bank,-
+1,Discuss Android ecosystem and Open Handset Alliance in detail.,15,MA,bank,-
+1,Examine Android Runtime and Libraries layer.,15,MA,bank,-
+1,Discuss Android OS features and advantages.,15,MA,bank,-
+1,Analyze Android API levels and backward compatibility.,15,MA,bank,-
+2,State the concept of an Activity in Android.,2,MA,bank,-
+2,State the purpose of Intent.,2,MA,bank,-
+2,Briefly describe Fragment in Android.,2,MA,bank,-
+2,State the role of AndroidManifest.xml file.,2,MA,bank,-
+2,What is meant by Activity lifecycle?,2,MA,bank,-
+2,State the purpose of onCreate() method.,2,MA,bank,-
+2,What is the use of startActivity()?,2,MA,bank,-
+2,State the function of startActivityForResult().,2,MA,bank,-
+2,Briefly describe AlertDialog.,2,MA,bank,-
+2,Briefly describe ProgressDialog.,2,MA,bank,-
+2,Describe Activity lifecycle with a diagram.,7,MA,bank,-
+2,Discuss different types of Intents.,7,MA,bank,-
+2,Outline the steps involved in creating an Activity.,7,MA,bank,-
+2,Describe how an Activity is launched using Intent.,7,MA,bank,-
+2,Discuss Fragments and their usage in Android.,7,MA,bank,-
+2,Describe Themes and Styles in Android.,7,MA,bank,-
+2,Discuss different types of Dialog boxes.,7,MA,bank,-
+2,Explain Activity lifecycle in detail with diagram.,15,MA,bank,-
+2,Analyze Activities and Intents with examples.,15,MA,bank,-
+2,Elaborate on Dialog boxes and their types with examples.,15,MA,bank,-
+2,Discuss implementation of Themes and Styles.,15,MA,bank,-
+3,State the purpose of View in Android.,2,MA,bank,-
+3,State the role of ViewGroup.,2,MA,bank,-
+3,Briefly describe LinearLayout.,2,MA,bank,-
+3,Briefly describe RelativeLayout.,2,MA,bank,-
+3,State the purpose of ScrollView.,2,MA,bank,-
+3,Briefly describe TableLayout.,2,MA,bank,-
+3,Briefly describe FrameLayout.,2,MA,bank,-
+3,What is meant by AdapterView?,2,MA,bank,-
+3,Briefly describe AutoCompleteTextView.,2,MA,bank,-
+3,What is meant by Menu in Android?,2,MA,bank,-
+3,Describe Views and ViewGroups.,7,MA,bank,-
+3,Discuss LinearLayout with its attributes.,7,MA,bank,-
+3,Illustrate RelativeLayout with example.,7,MA,bank,-
+3,Describe ScrollView layout.,7,MA,bank,-
+3,Explain TableLayout with example.,7,MA,bank,-
+3,Discuss FrameLayout and its usage.,7,MA,bank,-
+3,Describe various Menus in Android.,7,MA,bank,-
+3,Analyze different Android layouts with examples.,15,MA,bank,-
+3,Compare LinearLayout and RelativeLayout in detail.,15,MA,bank,-
+3,Illustrate ScrollView and TableLayout with code.,15,MA,bank,-
+3,Discuss UI design using Views and ViewGroups.,15,MA,bank,-
+3,Examine event handling and menu creation.,15,MA,bank,-
+4,State the purpose of SharedPreferences.,2,MA,bank,-
+4,What is meant by Internal Storage?,2,MA,bank,-
+4,What is meant by External Storage?,2,MA,bank,-
+4,Briefly describe SQLite database.,2,MA,bank,-
+4,State the role of Content Provider.,2,MA,bank,-
+4,What is meant by Cursor?,2,MA,bank,-
+4,State the purpose of SQLiteOpenHelper.,2,MA,bank,-
+4,What is meant by CRUD operations?,2,MA,bank,-
+4,State the meaning of database version.,2,MA,bank,-
+4,What is meant by primary key?,2,MA,bank,-
+4,Illustrate SharedPreferences with example.,7,MA,bank,-
+4,Describe Internal and External storage.,7,MA,bank,-
+4,Discuss SQLite database in Android.,7,MA,bank,-
+4,Describe SQLiteOpenHelper class.,7,MA,bank,-
+4,Explain CRUD operations.,7,MA,bank,-
+4,Discuss Content Providers.,7,MA,bank,-
+4,Describe Cursor class.,7,MA,bank,-
+4,Analyze Android data storage options.,15,MA,bank,-
+4,Discuss SQLite architecture and operations.,15,MA,bank,-
+4,Illustrate CRUD operations using SQLite.,15,MA,bank,-
+4,Describe creation and usage of SQLite database.,15,MA,bank,-
+4,Discuss Content Providers in detail.,15,MA,bank,-
+5,State the purpose of ACTION_SEND intent.,2,MA,bank,-
+5,What is meant by implicit intent?,2,MA,bank,-
+5,State the use of EXTRA_EMAIL.,2,MA,bank,-
+5,State the purpose of EXTRA_SUBJECT.,2,MA,bank,-
+5,What is meant by mailto URI?,2,MA,bank,-
+5,What is meant by an Email client?,2,MA,bank,-
+5,State the use of Intent.EXTRA_TEXT.,2,MA,bank,-
+5,What is the role of ACTION_CHOOSER?,2,MA,bank,-
+5,Describe sending email using Intent.,7,MA,bank,-
+5,Illustrate ACTION_SEND intent with example.,7,MA,bank,-
+5,Discuss email extras used in Intent.,7,MA,bank,-
+5,Explain implicit intent with example.,7,MA,bank,-
+5,Describe email application workflow.,7,MA,bank,-
+5,Design and discuss email sending app.,15,MA,bank,-
+5,Analyze Intent object for email sending.,15,MA,bank,-
+5,Describe Android email application design.,15,MA,bank,-
+5,Discuss implicit intents and email integration.,15,MA,bank,-
+5,Outline steps involved in sending email.,15,MA,bank,-
+1,State the main components involved in a data communication system.,2,CNS,bank,-
+1,Mention the essential characteristics of a data communication system.,2,CNS,bank,-
+1,What is meant by the OSI reference model?,2,CNS,bank,-
+1,State the concept of computer networking.,2,CNS,bank,-
+1,List the various multiplexing techniques.,2,CNS,bank,-
+1,Distinguish between half-duplex and full-duplex transmission.,2,CNS,bank,-
+1,Mention any two examples of guided transmission media.,2,CNS,bank,-
+1,Compare point-to-point and multipoint communication.,2,CNS,bank,-
+1,List any two types of computer networks.,2,CNS,bank,-
+1,State the meaning of radio waves in wireless communication.,2,CNS,bank,-
+1,Distinguish between LAN and WAN.,2,CNS,bank,-
+1,Name any two types of transmission media.,2,CNS,bank,-
+1,State the importance of circuit switching in networking.,2,CNS,bank,-
+1,What is meant by network topology?,2,CNS,bank,-
+1,List the seven layers of the OSI model.,2,CNS,bank,-
+1,Discuss the different multiplexing techniques with suitable explanation.,7,CNS,bank,-
+1,Write a brief note on components and characteristics of data communication.,7,CNS,bank,-
+1,Describe various network topologies with suitable diagrams.,7,CNS,bank,-
+1,Examine guided and unguided transmission media in detail.,15,CNS,bank,-
+1,Describe guided transmission media and their applications.,7,CNS,bank,-
+1,Discuss unguided transmission media along with their advantages.,7,CNS,bank,-
+1,Explain the OSI model and functions of its seven layers.,15,CNS,bank,-
+1,Differentiate between packet switching and circuit switching.,7,CNS,bank,-
+2,State the concept of error detection and correction.,2,CNS,bank,-
+2,What is meant by cyclic redundancy check (CRC)?,2,CNS,bank,-
+2,List any two error detection techniques.,2,CNS,bank,-
+2,State the meaning of hamming distance.,2,CNS,bank,-
+2,Mention the different operating modes of HDLC.,2,CNS,bank,-
+2,Explain how hamming distance is calculated with an example.,2,CNS,bank,-
+2,List the classes of IPv4 addresses along with their ranges.,2,CNS,bank,-
+2,State the purpose of High-Level Data Link Control (HDLC).,2,CNS,bank,-
+2,What is meant by Point-to-Point Protocol (PPP)?,2,CNS,bank,-
+2,State the differences between HDLC and PPP.,2,CNS,bank,-
+2,Mention any two advantages of DHCP.,2,CNS,bank,-
+2,Discuss character-oriented and bit-oriented framing techniques.,7,CNS,bank,-
+2,Compare connection-oriented and connectionless protocols.,7,CNS,bank,-
+2,Analyze the structure and types of HDLC frames.,15,CNS,bank,-
+2,Discuss cyclic redundancy check with a suitable example.,15,CNS,bank,-
+2,Solve IPv4 address calculations using binary and decimal notation.,7,CNS,bank,-
+2,Describe DLC services including framing and protocol types.,7,CNS,bank,-
+2,Examine cyclic codes and CRC operation at sender and receiver.,15,CNS,bank,-
+3,State the primary responsibility of the Transport Layer.,2,CNS,bank,-
+3,What is meant by a socket?,2,CNS,bank,-
+3,State the concept of Stop-and-Wait protocol.,2,CNS,bank,-
+3,State the purpose of Domain Name System (DNS).,2,CNS,bank,-
+3,What is the function of FTP?,2,CNS,bank,-
+3,Name any two Transport Layer protocols.,2,CNS,bank,-
+3,State the major limitation of Stop-and-Wait protocol.,2,CNS,bank,-
+3,State the purpose of UDP.,2,CNS,bank,-
+3,What is meant by World Wide Web (WWW)?,2,CNS,bank,-
+3,State the role of HTTP.,2,CNS,bank,-
+3,Mention the major components of an e-mail system.,2,CNS,bank,-
+3,Name the two operating modes of FTP.,2,CNS,bank,-
+3,Describe Stop-and-Wait protocol with diagrams and FSM.,15,CNS,bank,-
+3,Discuss the services provided by TCP in detail.,15,CNS,bank,-
+3,Describe the Simple protocol using diagrams and FSM.,15,CNS,bank,-
+3,Explain the client-server computing model with an example.,7,CNS,bank,-
+3,Describe the working and importance of FTP.,7,CNS,bank,-
+3,Explain the structure and operation of an e-mail system.,7,CNS,bank,-
+3,Discuss the services offered by UDP.,7,CNS,bank,-
+3,Explain the working of Selective Repeat protocol.,7,CNS,bank,-
+4,Mention any two benefits of cloud computing.,2,CNS,bank,-
+4,State the meaning of cloud computing.,2,CNS,bank,-
+4,What is meant by grid computing?,2,CNS,bank,-
+4,State the concept of virtualization.,2,CNS,bank,-
+4,What is meant by a distributed system?,2,CNS,bank,-
+4,State the concept of utility-oriented computing.,2,CNS,bank,-
+4,State the meaning of service-oriented computing.,2,CNS,bank,-
+4,Name any two virtualization techniques used in cloud.,2,CNS,bank,-
+4,State the role of Web 2.0 in cloud computing.,2,CNS,bank,-
+4,Discuss the characteristics and benefits of cloud computing.,7,CNS,bank,-
+4,Analyze the major challenges faced in cloud computing.,7,CNS,bank,-
+4,Discuss the contribution of Web 2.0 to cloud evolution.,7,CNS,bank,-
+4,Examine service-oriented computing in detail.,7,CNS,bank,-
+4,Discuss utility-oriented computing and its applications.,7,CNS,bank,-
+4,Explain various cloud platforms and technologies.,15,CNS,bank,-
+4,Describe virtualization and distributed systems in cloud.,15,CNS,bank,-
+5,State the application sectors of community cloud.,2,CNS,bank,-
+5,What is meant by hardware as a service?,2,CNS,bank,-
+5,Mention key benefits of cloud computing.,2,CNS,bank,-
+5,State the concept of pay-as-you-go pricing model.,2,CNS,bank,-
+5,What is meant by cloud service deployment?,2,CNS,bank,-
+5,State the major challenge in cloud security.,2,CNS,bank,-
+5,List the open challenges in cloud computing.,2,CNS,bank,-
+5,Describe cloud reference architecture and its components.,15,CNS,bank,-
+5,Explain different types of cloud deployment models.,15,CNS,bank,-
+5,Write a short note on economic aspects of cloud computing.,7,CNS,bank,-
+5,Discuss major open challenges in cloud computing.,7,CNS,bank,-
+1,What is Network Security?,2,CNS,bank,-
+1,What is Packet Filters?,2,CNS,bank,-
+1,What is decides to either forward or discard the packet?,2,CNS,bank,-
+1,What is It is also called as?,2,CNS,bank,-
+1,What is screening router?,2,CNS,bank,-
+1,What is screening filter?,2,CNS,bank,-
+1,What is Such a?,2,CNS,bank,-
+1,What is firewall implementation?,2,CNS,bank,-
+1,What is from the local network to the outside world and vice versa)?,2,CNS,bank,-
+1,What is A packet filter performs the following functions?,2,CNS,bank,-
+1,What is Receive each packet as it arrives?,2,CNS,bank,-
+1,What is For example?,2,CNS,bank,-
+1,What is The rules specified in the packet filter work as follows?,2,CNS,bank,-
+1,What is a) Incoming packets from network?,2,CNS,bank,-
+1,What is are not allowed. They are blocked as a security precaution?,2,CNS,bank,-
+1,What is are blocked?,2,CNS,bank,-
+1,What is c) Incoming packets intended for a specific internal host?,2,CNS,bank,-
+1,What is d) Outgoing packets intended for port?,2,CNS,bank,-
+1,What is IP Address Spoofing?,2,CNS,bank,-
+1,What is Source Routing Attacks?,2,CNS,bank,-
+1,What is Tiny Fragment Attacks?,2,CNS,bank,-
+1,What is a) IP Address Spoofing?,2,CNS,bank,-
+1,What is b) Source Routing Attacks?,2,CNS,bank,-
+1,What is c) Tiny Fragment Attacks?,2,CNS,bank,-
+1,What is IP packets pass through a variety of physical networks?,2,CNS,bank,-
+1,What is Application Gateways?,2,CNS,bank,-
+1,What is An application gateway is also called a?,2,CNS,bank,-
+1,What is proxy server?,2,CNS,bank,-
+1,What is Application gateways typically work as follows?,2,CNS,bank,-
+1,What is set up a connection for actual communication?,2,CNS,bank,-
+1,What is user id?,2,CNS,bank,-
+1,What is the password?,2,CNS,bank,-
+1,What is required to access the services of the application gateway?,2,CNS,bank,-
+1,What is The user provides this information to the application gateway?,2,CNS,bank,-
+1,"What is that there is a variation of the application gateway, called as?",2,CNS,bank,-
+1,What is circuit gateway?,2,CNS,bank,-
+1,What is creates a new connection between itself and the remote host?,2,CNS,bank,-
+1,What is Basic Concepts?,2,CNS,bank,-
+1,What is TCP/IP) protocol suite?,2,CNS,bank,-
+1,What is The TCP/IP protocol suite contains?,2,CNS,bank,-
+1,Explain Network Security in detail.,7,CNS,bank,-
+1,Explain Packet Filters in detail.,7,CNS,bank,-
+1,Explain decides to either forward or discard the packet in detail.,7,CNS,bank,-
+1,Explain It is also called as in detail.,7,CNS,bank,-
+1,Explain screening router in detail.,7,CNS,bank,-
+1,Explain screening filter in detail.,7,CNS,bank,-
+1,Explain Such a in detail.,7,CNS,bank,-
+1,Explain firewall implementation in detail.,7,CNS,bank,-
+1,Explain from the local network to the outside world and vice versa) in detail.,7,CNS,bank,-
+1,Explain A packet filter performs the following functions in detail.,7,CNS,bank,-
+1,Explain Receive each packet as it arrives in detail.,7,CNS,bank,-
+1,Explain For example in detail.,7,CNS,bank,-
+1,Explain The rules specified in the packet filter work as follows in detail.,7,CNS,bank,-
+1,Explain a) Incoming packets from network in detail.,7,CNS,bank,-
+1,Explain are not allowed. They are blocked as a security precaution in detail.,7,CNS,bank,-
+1,Explain are blocked in detail.,7,CNS,bank,-
+1,Explain c) Incoming packets intended for a specific internal host in detail.,7,CNS,bank,-
+1,Explain d) Outgoing packets intended for port in detail.,7,CNS,bank,-
+1,Explain IP Address Spoofing in detail.,7,CNS,bank,-
+1,Explain Source Routing Attacks in detail.,7,CNS,bank,-
+1,Explain Tiny Fragment Attacks in detail.,7,CNS,bank,-
+1,Explain a) IP Address Spoofing in detail.,7,CNS,bank,-
+1,Explain b) Source Routing Attacks in detail.,7,CNS,bank,-
+1,Explain c) Tiny Fragment Attacks in detail.,7,CNS,bank,-
+1,Explain IP packets pass through a variety of physical networks in detail.,7,CNS,bank,-
+1,Explain Application Gateways in detail.,7,CNS,bank,-
+1,Explain An application gateway is also called a in detail.,7,CNS,bank,-
+1,Explain proxy server in detail.,7,CNS,bank,-
+1,Explain Application gateways typically work as follows in detail.,7,CNS,bank,-
+1,Explain set up a connection for actual communication in detail.,7,CNS,bank,-
+1,Discuss Network Security with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Packet Filters with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss decides to either forward or discard the packet with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss It is also called as with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss screening router with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss screening filter with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Such a with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss firewall implementation with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss from the local network to the outside world and vice versa) with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss A packet filter performs the following functions with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Receive each packet as it arrives with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss For example with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss The rules specified in the packet filter work as follows with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss a) Incoming packets from network with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss are not allowed. They are blocked as a security precaution with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss are blocked with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss c) Incoming packets intended for a specific internal host with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss d) Outgoing packets intended for port with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss IP Address Spoofing with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Source Routing Attacks with suitable diagram and applications.,15,CNS,bank,-
+5,What is Computer-Based Asymmetric-Key Cryptography Algorithms?,2,CNS,bank,-
+5,What is Overview Of Asymmetric-Key Cryptography?,2,CNS,bank,-
+5,What is wants to send a message to?,2,CNS,bank,-
+5,What is exactly reverse steps take place?,2,CNS,bank,-
+5,What is encrypts the message using?,2,CNS,bank,-
+5,What is A’s public key?,2,CNS,bank,-
+5,"What is Therefore, only?",2,CNS,bank,-
+5,"What is can decrypt the message back to its original form, using?",2,CNS,bank,-
+5,What is her private key?,2,CNS,bank,-
+5,What is Rsa Algorithm?,2,CNS,bank,-
+5,What is The RSA algorithm is the most popular and proven asymmetric-key cryptographic algorithm?,2,CNS,bank,-
+5,What is For instance?,2,CNS,bank,-
+5,"What is is a prime number, because it can be divided only by?",2,CNS,bank,-
+5,What is not a prime number?,2,CNS,bank,-
+5,What is because other than by?,2,CNS,bank,-
+5,What is it can?,2,CNS,bank,-
+5,What is also be divided by 2?,2,CNS,bank,-
+5,What is are non-prime numbers?,2,CNS,bank,-
+5,What is The private and public keys in RSA are based on?,2,CNS,bank,-
+5,What is very large?,2,CNS,bank,-
+5,What is made up of 100 or more digits?,2,CNS,bank,-
+5,What is prime numbers?,2,CNS,bank,-
+5,What is The algorithm itself is quite simple (unlike the symmetric-key cryptographic algorithms)?,2,CNS,bank,-
+5,"What is However, the?",2,CNS,bank,-
+5,What is real challenge in the case?,2,CNS,bank,-
+5,What is of RSA is the selection and?,2,CNS,bank,-
+5,What is generation of the public and private keys?,2,CNS,bank,-
+5,What is Let us now understand?,2,CNS,bank,-
+5,What is how the public and private keys are generated?,2,CNS,bank,-
+5,"What is Let P = 7, Q = 17?",2,CNS,bank,-
+5,What is Security of RSA?,2,CNS,bank,-
+5,What is Some of the main possible attacks on RSA?,2,CNS,bank,-
+5,What is Plain-text Attacks?,2,CNS,bank,-
+5,What is Chosen-cipher text attack?,2,CNS,bank,-
+5,What is Factorization Attack?,2,CNS,bank,-
+5,What is Attacks on the Encryption Key?,2,CNS,bank,-
+5,What is Attacks on the Decryption Key?,2,CNS,bank,-
+5,What is The plain-text attacks are classified further into three sub-categories?,2,CNS,bank,-
+5,What is a) Short-message Attack?,2,CNS,bank,-
+5,What is b) Cycling Attack?,2,CNS,bank,-
+5,Explain Computer-Based Asymmetric-Key Cryptography Algorithms in detail.,7,CNS,bank,-
+5,Explain Overview Of Asymmetric-Key Cryptography in detail.,7,CNS,bank,-
+5,Explain wants to send a message to in detail.,7,CNS,bank,-
+5,Explain exactly reverse steps take place in detail.,7,CNS,bank,-
+5,Explain encrypts the message using in detail.,7,CNS,bank,-
+5,Explain A’s public key in detail.,7,CNS,bank,-
+5,"Explain Therefore, only in detail.",7,CNS,bank,-
+5,"Explain can decrypt the message back to its original form, using in detail.",7,CNS,bank,-
+5,Explain her private key in detail.,7,CNS,bank,-
+5,Explain Rsa Algorithm in detail.,7,CNS,bank,-
+5,Explain The RSA algorithm is the most popular and proven asymmetric-key cryptographic algorithm in detail.,7,CNS,bank,-
+5,Explain For instance in detail.,7,CNS,bank,-
+5,"Explain is a prime number, because it can be divided only by in detail.",7,CNS,bank,-
+5,Explain not a prime number in detail.,7,CNS,bank,-
+5,Explain because other than by in detail.,7,CNS,bank,-
+5,Explain it can in detail.,7,CNS,bank,-
+5,Explain also be divided by 2 in detail.,7,CNS,bank,-
+5,Explain are non-prime numbers in detail.,7,CNS,bank,-
+5,Explain The private and public keys in RSA are based on in detail.,7,CNS,bank,-
+5,Explain very large in detail.,7,CNS,bank,-
+5,Explain made up of 100 or more digits in detail.,7,CNS,bank,-
+5,Explain prime numbers in detail.,7,CNS,bank,-
+5,Explain The algorithm itself is quite simple (unlike the symmetric-key cryptographic algorithms) in detail.,7,CNS,bank,-
+5,"Explain However, the in detail.",7,CNS,bank,-
+5,Explain real challenge in the case in detail.,7,CNS,bank,-
+5,Explain of RSA is the selection and in detail.,7,CNS,bank,-
+5,Explain generation of the public and private keys in detail.,7,CNS,bank,-
+5,Explain Let us now understand in detail.,7,CNS,bank,-
+5,Explain how the public and private keys are generated in detail.,7,CNS,bank,-
+5,"Explain Let P = 7, Q = 17 in detail.",7,CNS,bank,-
+5,Discuss Computer-Based Asymmetric-Key Cryptography Algorithms with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss Overview Of Asymmetric-Key Cryptography with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss wants to send a message to with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss exactly reverse steps take place with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss encrypts the message using with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss A’s public key with suitable diagram and applications.,15,CNS,bank,-
+5,"Discuss Therefore, only with suitable diagram and applications.",15,CNS,bank,-
+5,"Discuss can decrypt the message back to its original form, using with suitable diagram and applications.",15,CNS,bank,-
+5,Discuss her private key with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss Rsa Algorithm with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss The RSA algorithm is the most popular and proven asymmetric-key cryptographic algorithm with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss For instance with suitable diagram and applications.,15,CNS,bank,-
+5,"Discuss is a prime number, because it can be divided only by with suitable diagram and applications.",15,CNS,bank,-
+5,Discuss not a prime number with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss because other than by with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss it can with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss also be divided by 2 with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss are non-prime numbers with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss The private and public keys in RSA are based on with suitable diagram and applications.,15,CNS,bank,-
+5,Discuss very large with suitable diagram and applications.,15,CNS,bank,-
+4,What is Computer-Based Symmetric-Key Cryptographic Algorithms?,2,CNS,bank,-
+4,What is Algorithm Modes?,2,CNS,bank,-
+4,What is Cipher Block Chaining (CBC) Mode?,2,CNS,bank,-
+4,What is Cipher Block Chaining (CBC)?,2,CNS,bank,-
+4,What is The first step receives?,2,CNS,bank,-
+4,What is two inputs?,2,CNS,bank,-
+4,What is Initialization Vector (IV)?,2,CNS,bank,-
+4,What is Cipher Feedback (CFB) Mode?,2,CNS,bank,-
+4,What is stream cipher must be used?,2,CNS,bank,-
+4,What is The Cipher Feedback (CFB) mode is useful in such cases?,2,CNS,bank,-
+4,What is In this mode?,2,CNS,bank,-
+4,What is data is encrypted in units that are smaller (?,2,CNS,bank,-
+4,What is e.g. they could be of size 8 bits?,2,CNS,bank,-
+4,What is than a defined block size (?,2,CNS,bank,-
+4,What is which is usually 64 bits?,2,CNS,bank,-
+4,What is Output Feedback (OFB)?,2,CNS,bank,-
+4,What is cipher text is fed into the next stage of encryption process?,2,CNS,bank,-
+4,What is An Overview Of Symmetric-Key Cryptography?,2,CNS,bank,-
+4,"What is Symmetric-key cryptography is referred to by various other terms, such as?",2,CNS,bank,-
+4,What is secret-key cryptography?,2,CNS,bank,-
+4,What is parties must agree upon the key?,2,CNS,bank,-
+4,"What is before any transmission begins, and nobody else should know about it?",2,CNS,bank,-
+4,"What is Basically, at the?",2,CNS,bank,-
+4,What is sender’s end (A)?,2,CNS,bank,-
+4,What is the key transforms the plain-text message into a cipher-text form. At the?,2,CNS,bank,-
+4,What is receiver’s end (B)?,2,CNS,bank,-
+4,What is In practical situations?,2,CNS,bank,-
+4,What is symmetric-key cryptography has a few problems?,2,CNS,bank,-
+4,What is The first problem here is that of?,2,CNS,bank,-
+4,What is key agreement?,2,CNS,bank,-
+4,What is key distribution?,2,CNS,bank,-
+4,What is The problem is: in the first place?,2,CNS,bank,-
+4,What is how do two parties agree on a key??,2,CNS,bank,-
+4,What is One solution is that somebody from the sender’s end?,2,CNS,bank,-
+4,What is physically visits?,2,CNS,bank,-
+4,What is the receiver and hands over the key. Another way is to?,2,CNS,bank,-
+4,What is courier a paper?,2,CNS,bank,-
+4,What is send the key over the network?,2,CNS,bank,-
+4,"What is to B and ask for confirmation. But then, if an?",2,CNS,bank,-
+4,What is intruder gets the message?,2,CNS,bank,-
+4,Explain Computer-Based Symmetric-Key Cryptographic Algorithms in detail.,7,CNS,bank,-
+4,Explain Algorithm Modes in detail.,7,CNS,bank,-
+4,Explain Cipher Block Chaining (CBC) Mode in detail.,7,CNS,bank,-
+4,Explain Cipher Block Chaining (CBC) in detail.,7,CNS,bank,-
+4,Explain The first step receives in detail.,7,CNS,bank,-
+4,Explain two inputs in detail.,7,CNS,bank,-
+4,Explain Initialization Vector (IV) in detail.,7,CNS,bank,-
+4,Explain Cipher Feedback (CFB) Mode in detail.,7,CNS,bank,-
+4,Explain stream cipher must be used in detail.,7,CNS,bank,-
+4,Explain The Cipher Feedback (CFB) mode is useful in such cases in detail.,7,CNS,bank,-
+4,Explain In this mode in detail.,7,CNS,bank,-
+4,Explain data is encrypted in units that are smaller ( in detail.,7,CNS,bank,-
+4,Explain e.g. they could be of size 8 bits in detail.,7,CNS,bank,-
+4,Explain than a defined block size ( in detail.,7,CNS,bank,-
+4,Explain which is usually 64 bits in detail.,7,CNS,bank,-
+4,Explain Output Feedback (OFB) in detail.,7,CNS,bank,-
+4,Explain cipher text is fed into the next stage of encryption process in detail.,7,CNS,bank,-
+4,Explain An Overview Of Symmetric-Key Cryptography in detail.,7,CNS,bank,-
+4,"Explain Symmetric-key cryptography is referred to by various other terms, such as in detail.",7,CNS,bank,-
+4,Explain secret-key cryptography in detail.,7,CNS,bank,-
+4,Explain parties must agree upon the key in detail.,7,CNS,bank,-
+4,"Explain before any transmission begins, and nobody else should know about it in detail.",7,CNS,bank,-
+4,"Explain Basically, at the in detail.",7,CNS,bank,-
+4,Explain sender’s end (A) in detail.,7,CNS,bank,-
+4,Explain the key transforms the plain-text message into a cipher-text form. At the in detail.,7,CNS,bank,-
+4,Explain receiver’s end (B) in detail.,7,CNS,bank,-
+4,Explain In practical situations in detail.,7,CNS,bank,-
+4,Explain symmetric-key cryptography has a few problems in detail.,7,CNS,bank,-
+4,Explain The first problem here is that of in detail.,7,CNS,bank,-
+4,Explain key agreement in detail.,7,CNS,bank,-
+4,Discuss Computer-Based Symmetric-Key Cryptographic Algorithms with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss Algorithm Modes with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss Cipher Block Chaining (CBC) Mode with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss Cipher Block Chaining (CBC) with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss The first step receives with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss two inputs with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss Initialization Vector (IV) with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss Cipher Feedback (CFB) Mode with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss stream cipher must be used with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss The Cipher Feedback (CFB) mode is useful in such cases with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss In this mode with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss data is encrypted in units that are smaller ( with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss e.g. they could be of size 8 bits with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss than a defined block size ( with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss which is usually 64 bits with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss Output Feedback (OFB) with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss cipher text is fed into the next stage of encryption process with suitable diagram and applications.,15,CNS,bank,-
+4,Discuss An Overview Of Symmetric-Key Cryptography with suitable diagram and applications.,15,CNS,bank,-
+4,"Discuss Symmetric-key cryptography is referred to by various other terms, such as with suitable diagram and applications.",15,CNS,bank,-
+4,Discuss secret-key cryptography with suitable diagram and applications.,15,CNS,bank,-
+1,What is Cryptography Techniques?,2,CNS,bank,-
+1,What is Transposition Techniques?,2,CNS,bank,-
+1,What is Rail-Fence Technique?,2,CNS,bank,-
+1,What is The rail-fence technique is an example of transposition?,2,CNS,bank,-
+1,What is It uses a simple algorithm?,2,CNS,bank,-
+1,What is Simple Columnar Transposition Technique?,2,CNS,bank,-
+1,What is Basic technique?,2,CNS,bank,-
+1,What is Simple columnar transposition technique with multiple rounds?,2,CNS,bank,-
+1,What is uses a?,2,CNS,bank,-
+1,What is one-time pad?,2,CNS,bank,-
+1,What is Let us apply the?,2,CNS,bank,-
+1,What is cipher algorithm?,2,CNS,bank,-
+1,What is to a plain-text message?,2,CNS,bank,-
+1,What is How Are You?,2,CNS,bank,-
+1,What is using a?,2,CNS,bank,-
+1,What is to produce a?,2,CNS,bank,-
+1,What is cipher-text message?,2,CNS,bank,-
+1,What is as shown?,2,CNS,bank,-
+1,What is Book Cipher/Running-Key Cipher?,2,CNS,bank,-
+1,"What is The idea used in book cipher, also incorrectly called?",2,CNS,bank,-
+1,What is running-key cipher?,2,CNS,bank,-
+1,"What is is quite simple, and is similar in principle to the?",2,CNS,bank,-
+1,What is Encryption and Decryption?,2,CNS,bank,-
+1,What is Basic Terms?,2,CNS,bank,-
+1,What is Every encryption and decryption process?,2,CNS,bank,-
+1,What is has two aspects?,2,CNS,bank,-
+1,What is and the?,2,CNS,bank,-
+1,What is used for encryption and decryption?,2,CNS,bank,-
+1,What is Symmetric And Asymmetric Key Cryptography?,2,CNS,bank,-
+1,What is Symmetric Key Cryptography and the Problem of Key Distribution?,2,CNS,bank,-
+1,What is Diffie-Hellman Key-Exchange/Agreement Algorithm?,2,CNS,bank,-
+1,What is Asymmetric Key Operation?,2,CNS,bank,-
+1,What is Whitefield Diffie?,2,CNS,bank,-
+1,What is Martin Hellman?,2,CNS,bank,-
+1,What is devised an amazing solution to the problem of?,2,CNS,bank,-
+1,What is key agreement?,2,CNS,bank,-
+1,What is key exchange?,2,CNS,bank,-
+1,What is in 1976. This solution is called the?,2,CNS,bank,-
+1,What is only for key agreement?,2,CNS,bank,-
+1,What is not for encryption or decryption?,2,CNS,bank,-
+1,Explain Cryptography Techniques in detail.,7,CNS,bank,-
+1,Explain Transposition Techniques in detail.,7,CNS,bank,-
+1,Explain Rail-Fence Technique in detail.,7,CNS,bank,-
+1,Explain The rail-fence technique is an example of transposition in detail.,7,CNS,bank,-
+1,Explain It uses a simple algorithm in detail.,7,CNS,bank,-
+1,Explain Simple Columnar Transposition Technique in detail.,7,CNS,bank,-
+1,Explain Basic technique in detail.,7,CNS,bank,-
+1,Explain Simple columnar transposition technique with multiple rounds in detail.,7,CNS,bank,-
+1,Explain uses a in detail.,7,CNS,bank,-
+1,Explain one-time pad in detail.,7,CNS,bank,-
+1,Explain Let us apply the in detail.,7,CNS,bank,-
+1,Explain cipher algorithm in detail.,7,CNS,bank,-
+1,Explain to a plain-text message in detail.,7,CNS,bank,-
+1,Explain How Are You in detail.,7,CNS,bank,-
+1,Explain using a in detail.,7,CNS,bank,-
+1,Explain to produce a in detail.,7,CNS,bank,-
+1,Explain cipher-text message in detail.,7,CNS,bank,-
+1,Explain as shown in detail.,7,CNS,bank,-
+1,Explain Book Cipher/Running-Key Cipher in detail.,7,CNS,bank,-
+1,"Explain The idea used in book cipher, also incorrectly called in detail.",7,CNS,bank,-
+1,Explain running-key cipher in detail.,7,CNS,bank,-
+1,"Explain is quite simple, and is similar in principle to the in detail.",7,CNS,bank,-
+1,Explain Encryption and Decryption in detail.,7,CNS,bank,-
+1,Explain Basic Terms in detail.,7,CNS,bank,-
+1,Explain Every encryption and decryption process in detail.,7,CNS,bank,-
+1,Explain has two aspects in detail.,7,CNS,bank,-
+1,Explain and the in detail.,7,CNS,bank,-
+1,Explain used for encryption and decryption in detail.,7,CNS,bank,-
+1,Explain Symmetric And Asymmetric Key Cryptography in detail.,7,CNS,bank,-
+1,Explain Symmetric Key Cryptography and the Problem of Key Distribution in detail.,7,CNS,bank,-
+1,Discuss Cryptography Techniques with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Transposition Techniques with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Rail-Fence Technique with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss The rail-fence technique is an example of transposition with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss It uses a simple algorithm with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Simple Columnar Transposition Technique with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Basic technique with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Simple columnar transposition technique with multiple rounds with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss uses a with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss one-time pad with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Let us apply the with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss cipher algorithm with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss to a plain-text message with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss How Are You with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss using a with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss to produce a with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss cipher-text message with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss as shown with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Book Cipher/Running-Key Cipher with suitable diagram and applications.,15,CNS,bank,-
+1,"Discuss The idea used in book cipher, also incorrectly called with suitable diagram and applications.",15,CNS,bank,-
+1,What is Security Approaches?,2,CNS,bank,-
+1,What is Security Models?,2,CNS,bank,-
+1,What is No Security?,2,CNS,bank,-
+1,"What is In this simplest case, the approach could be a decision to implement?",2,CNS,bank,-
+1,What is no security at all?,2,CNS,bank,-
+1,What is Security through Obscurity?,2,CNS,bank,-
+1,"What is In this model, a system is secure simply because?",2,CNS,bank,-
+1,What is nobody knows about its existence and contents?,2,CNS,bank,-
+1,What is This approach?,2,CNS,bank,-
+1,What is cannot work for too long?,2,CNS,bank,-
+1,What is Host Security?,2,CNS,bank,-
+1,"What is In this scheme, the?",2,CNS,bank,-
+1,What is security for each host is enforced individually?,2,CNS,bank,-
+1,What is focus is to control network access?,2,CNS,bank,-
+1,What is Security-Management Practices?,2,CNS,bank,-
+1,What is Good security-management practices always talk of a?,2,CNS,bank,-
+1,What is security policy being in place?,2,CNS,bank,-
+1,What is Putting a security policy in place is actually quite tough. A?,2,CNS,bank,-
+1,What is good security policy?,2,CNS,bank,-
+1,What is and its proper implementation go a long way in?,2,CNS,bank,-
+1,What is ensuring adequate?,2,CNS,bank,-
+1,What is How much money and effort does this security implementation cost??,2,CNS,bank,-
+1,What is What is the mechanism of providing security??,2,CNS,bank,-
+1,What is Cultural Issues?,2,CNS,bank,-
+1,"What is Does the policy complement the people’s expectations, working style and beliefs??",2,CNS,bank,-
+1,What is Does the policy meet the legal requirements??,2,CNS,bank,-
+1,What is a) Explanation of the policy to all concerned?,2,CNS,bank,-
+1,What is b) Outline everybody’s responsibilities?,2,CNS,bank,-
+1,What is c) Use simple language in all communications?,2,CNS,bank,-
+1,What is d) Accountability should be established?,2,CNS,bank,-
+1,What is e) Provide for exceptions and periodic reviews?,2,CNS,bank,-
+1,What is Principles Of Security?,2,CNS,bank,-
+1,What is Access Control?,2,CNS,bank,-
+1,What is An example?,2,CNS,bank,-
+1,What is A real-life example of this could be the case of a?,2,CNS,bank,-
+1,"What is user C, posing as user A?",2,CNS,bank,-
+1,What is sending a funds transfer request?,2,CNS,bank,-
+1,What is from A’s account to C’s account?,2,CNS,bank,-
+1,Explain Security Approaches in detail.,7,CNS,bank,-
+1,Explain Security Models in detail.,7,CNS,bank,-
+1,Explain No Security in detail.,7,CNS,bank,-
+1,"Explain In this simplest case, the approach could be a decision to implement in detail.",7,CNS,bank,-
+1,Explain no security at all in detail.,7,CNS,bank,-
+1,Explain Security through Obscurity in detail.,7,CNS,bank,-
+1,"Explain In this model, a system is secure simply because in detail.",7,CNS,bank,-
+1,Explain nobody knows about its existence and contents in detail.,7,CNS,bank,-
+1,Explain This approach in detail.,7,CNS,bank,-
+1,Explain cannot work for too long in detail.,7,CNS,bank,-
+1,Explain Host Security in detail.,7,CNS,bank,-
+1,"Explain In this scheme, the in detail.",7,CNS,bank,-
+1,Explain security for each host is enforced individually in detail.,7,CNS,bank,-
+1,Explain focus is to control network access in detail.,7,CNS,bank,-
+1,Explain Security-Management Practices in detail.,7,CNS,bank,-
+1,Explain Good security-management practices always talk of a in detail.,7,CNS,bank,-
+1,Explain security policy being in place in detail.,7,CNS,bank,-
+1,Explain Putting a security policy in place is actually quite tough. A in detail.,7,CNS,bank,-
+1,Explain good security policy in detail.,7,CNS,bank,-
+1,Explain and its proper implementation go a long way in in detail.,7,CNS,bank,-
+1,Explain ensuring adequate in detail.,7,CNS,bank,-
+1,Explain How much money and effort does this security implementation cost? in detail.,7,CNS,bank,-
+1,Explain What is the mechanism of providing security? in detail.,7,CNS,bank,-
+1,Explain Cultural Issues in detail.,7,CNS,bank,-
+1,"Explain Does the policy complement the people’s expectations, working style and beliefs? in detail.",7,CNS,bank,-
+1,Explain Does the policy meet the legal requirements? in detail.,7,CNS,bank,-
+1,Explain a) Explanation of the policy to all concerned in detail.,7,CNS,bank,-
+1,Explain b) Outline everybody’s responsibilities in detail.,7,CNS,bank,-
+1,Explain c) Use simple language in all communications in detail.,7,CNS,bank,-
+1,Discuss Security Approaches with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Security Models with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss No Security with suitable diagram and applications.,15,CNS,bank,-
+1,"Discuss In this simplest case, the approach could be a decision to implement with suitable diagram and applications.",15,CNS,bank,-
+1,Discuss no security at all with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Security through Obscurity with suitable diagram and applications.,15,CNS,bank,-
+1,"Discuss In this model, a system is secure simply because with suitable diagram and applications.",15,CNS,bank,-
+1,Discuss nobody knows about its existence and contents with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss This approach with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss cannot work for too long with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Host Security with suitable diagram and applications.,15,CNS,bank,-
+1,"Discuss In this scheme, the with suitable diagram and applications.",15,CNS,bank,-
+1,Discuss security for each host is enforced individually with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss focus is to control network access with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Security-Management Practices with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Good security-management practices always talk of a with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss security policy being in place with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss Putting a security policy in place is actually quite tough. A with suitable diagram and applications.,15,CNS,bank,-
+1,Discuss good security policy with suitable diagram and applications.,15,CNS,bank,-
+3,What is Cryptography Techniques?,2,CNS,bank,-
+3,What is Transposition Techniques?,2,CNS,bank,-
+3,What is Rail-Fence Technique?,2,CNS,bank,-
+3,What is The rail-fence technique is an example of transposition?,2,CNS,bank,-
+3,What is It uses a simple algorithm?,2,CNS,bank,-
+3,What is Simple Columnar Transposition Technique?,2,CNS,bank,-
+3,What is Basic technique?,2,CNS,bank,-
+3,What is Simple columnar transposition technique with multiple rounds?,2,CNS,bank,-
+3,What is uses a?,2,CNS,bank,-
+3,What is one-time pad?,2,CNS,bank,-
+3,What is Let us apply the?,2,CNS,bank,-
+3,What is cipher algorithm?,2,CNS,bank,-
+3,What is to a plain-text message?,2,CNS,bank,-
+3,What is How Are You?,2,CNS,bank,-
+3,What is using a?,2,CNS,bank,-
+3,What is to produce a?,2,CNS,bank,-
+3,What is cipher-text message?,2,CNS,bank,-
+3,What is as shown?,2,CNS,bank,-
+3,What is Book Cipher/Running-Key Cipher?,2,CNS,bank,-
+3,"What is The idea used in book cipher, also incorrectly called?",2,CNS,bank,-
+3,What is running-key cipher?,2,CNS,bank,-
+3,"What is is quite simple, and is similar in principle to the?",2,CNS,bank,-
+3,What is Encryption and Decryption?,2,CNS,bank,-
+3,What is Basic Terms?,2,CNS,bank,-
+3,What is Every encryption and decryption process?,2,CNS,bank,-
+3,What is has two aspects?,2,CNS,bank,-
+3,What is and the?,2,CNS,bank,-
+3,What is used for encryption and decryption?,2,CNS,bank,-
+3,What is Symmetric And Asymmetric Key Cryptography?,2,CNS,bank,-
+3,What is Symmetric Key Cryptography and the Problem of Key Distribution?,2,CNS,bank,-
+3,What is Diffie-Hellman Key-Exchange/Agreement Algorithm?,2,CNS,bank,-
+3,What is Asymmetric Key Operation?,2,CNS,bank,-
+3,What is Whitefield Diffie?,2,CNS,bank,-
+3,What is Martin Hellman?,2,CNS,bank,-
+3,What is devised an amazing solution to the problem of?,2,CNS,bank,-
+3,What is key agreement?,2,CNS,bank,-
+3,What is key exchange?,2,CNS,bank,-
+3,What is in 1976. This solution is called the?,2,CNS,bank,-
+3,What is only for key agreement?,2,CNS,bank,-
+3,What is not for encryption or decryption?,2,CNS,bank,-
+3,Explain Cryptography Techniques in detail.,7,CNS,bank,-
+3,Explain Transposition Techniques in detail.,7,CNS,bank,-
+3,Explain Rail-Fence Technique in detail.,7,CNS,bank,-
+3,Explain The rail-fence technique is an example of transposition in detail.,7,CNS,bank,-
+3,Explain It uses a simple algorithm in detail.,7,CNS,bank,-
+3,Explain Simple Columnar Transposition Technique in detail.,7,CNS,bank,-
+3,Explain Basic technique in detail.,7,CNS,bank,-
+3,Explain Simple columnar transposition technique with multiple rounds in detail.,7,CNS,bank,-
+3,Explain uses a in detail.,7,CNS,bank,-
+3,Explain one-time pad in detail.,7,CNS,bank,-
+3,Explain Let us apply the in detail.,7,CNS,bank,-
+3,Explain cipher algorithm in detail.,7,CNS,bank,-
+3,Explain to a plain-text message in detail.,7,CNS,bank,-
+3,Explain How Are You in detail.,7,CNS,bank,-
+3,Explain using a in detail.,7,CNS,bank,-
+3,Explain to produce a in detail.,7,CNS,bank,-
+3,Explain cipher-text message in detail.,7,CNS,bank,-
+3,Explain as shown in detail.,7,CNS,bank,-
+3,Explain Book Cipher/Running-Key Cipher in detail.,7,CNS,bank,-
+3,"Explain The idea used in book cipher, also incorrectly called in detail.",7,CNS,bank,-
+3,Explain running-key cipher in detail.,7,CNS,bank,-
+3,"Explain is quite simple, and is similar in principle to the in detail.",7,CNS,bank,-
+3,Explain Encryption and Decryption in detail.,7,CNS,bank,-
+3,Explain Basic Terms in detail.,7,CNS,bank,-
+3,Explain Every encryption and decryption process in detail.,7,CNS,bank,-
+3,Explain has two aspects in detail.,7,CNS,bank,-
+3,Explain and the in detail.,7,CNS,bank,-
+3,Explain used for encryption and decryption in detail.,7,CNS,bank,-
+3,Explain Symmetric And Asymmetric Key Cryptography in detail.,7,CNS,bank,-
+3,Explain Symmetric Key Cryptography and the Problem of Key Distribution in detail.,7,CNS,bank,-
+3,Discuss Cryptography Techniques with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss Transposition Techniques with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss Rail-Fence Technique with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss The rail-fence technique is an example of transposition with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss It uses a simple algorithm with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss Simple Columnar Transposition Technique with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss Basic technique with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss Simple columnar transposition technique with multiple rounds with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss uses a with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss one-time pad with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss Let us apply the with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss cipher algorithm with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss to a plain-text message with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss How Are You with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss using a with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss to produce a with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss cipher-text message with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss as shown with suitable diagram and applications.,15,CNS,bank,-
+3,Discuss Book Cipher/Running-Key Cipher with suitable diagram and applications.,15,CNS,bank,-
+3,"Discuss The idea used in book cipher, also incorrectly called with suitable diagram and applications.",15,CNS,bank,-
+2,What is Network Security?,2,CNS,bank,-
+2,What is Packet Filters?,2,CNS,bank,-
+2,What is decides to either forward or discard the packet?,2,CNS,bank,-
+2,What is It is also called as?,2,CNS,bank,-
+2,What is screening router?,2,CNS,bank,-
+2,What is screening filter?,2,CNS,bank,-
+2,What is Such a?,2,CNS,bank,-
+2,What is firewall implementation?,2,CNS,bank,-
+2,What is from the local network to the outside world and vice versa)?,2,CNS,bank,-
+2,What is A packet filter performs the following functions?,2,CNS,bank,-
+2,What is Receive each packet as it arrives?,2,CNS,bank,-
+2,What is For example?,2,CNS,bank,-
+2,What is The rules specified in the packet filter work as follows?,2,CNS,bank,-
+2,What is a) Incoming packets from network?,2,CNS,bank,-
+2,What is are not allowed. They are blocked as a security precaution?,2,CNS,bank,-
+2,What is are blocked?,2,CNS,bank,-
+2,What is c) Incoming packets intended for a specific internal host?,2,CNS,bank,-
+2,What is d) Outgoing packets intended for port?,2,CNS,bank,-
+2,What is IP Address Spoofing?,2,CNS,bank,-
+2,What is Source Routing Attacks?,2,CNS,bank,-
+2,What is Tiny Fragment Attacks?,2,CNS,bank,-
+2,What is a) IP Address Spoofing?,2,CNS,bank,-
+2,What is b) Source Routing Attacks?,2,CNS,bank,-
+2,What is c) Tiny Fragment Attacks?,2,CNS,bank,-
+2,What is IP packets pass through a variety of physical networks?,2,CNS,bank,-
+2,What is Application Gateways?,2,CNS,bank,-
+2,What is An application gateway is also called a?,2,CNS,bank,-
+2,What is proxy server?,2,CNS,bank,-
+2,What is Application gateways typically work as follows?,2,CNS,bank,-
+2,What is set up a connection for actual communication?,2,CNS,bank,-
+2,What is user id?,2,CNS,bank,-
+2,What is the password?,2,CNS,bank,-
+2,What is required to access the services of the application gateway?,2,CNS,bank,-
+2,What is The user provides this information to the application gateway?,2,CNS,bank,-
+2,"What is that there is a variation of the application gateway, called as?",2,CNS,bank,-
+2,What is circuit gateway?,2,CNS,bank,-
+2,What is creates a new connection between itself and the remote host?,2,CNS,bank,-
+2,What is Basic Concepts?,2,CNS,bank,-
+2,What is TCP/IP) protocol suite?,2,CNS,bank,-
+2,What is The TCP/IP protocol suite contains?,2,CNS,bank,-
+2,Explain Network Security in detail.,7,CNS,bank,-
+2,Explain Packet Filters in detail.,7,CNS,bank,-
+2,Explain decides to either forward or discard the packet in detail.,7,CNS,bank,-
+2,Explain It is also called as in detail.,7,CNS,bank,-
+2,Explain screening router in detail.,7,CNS,bank,-
+2,Explain screening filter in detail.,7,CNS,bank,-
+2,Explain Such a in detail.,7,CNS,bank,-
+2,Explain firewall implementation in detail.,7,CNS,bank,-
+2,Explain from the local network to the outside world and vice versa) in detail.,7,CNS,bank,-
+2,Explain A packet filter performs the following functions in detail.,7,CNS,bank,-
+2,Explain Receive each packet as it arrives in detail.,7,CNS,bank,-
+2,Explain For example in detail.,7,CNS,bank,-
+2,Explain The rules specified in the packet filter work as follows in detail.,7,CNS,bank,-
+2,Explain a) Incoming packets from network in detail.,7,CNS,bank,-
+2,Explain are not allowed. They are blocked as a security precaution in detail.,7,CNS,bank,-
+2,Explain are blocked in detail.,7,CNS,bank,-
+2,Explain c) Incoming packets intended for a specific internal host in detail.,7,CNS,bank,-
+2,Explain d) Outgoing packets intended for port in detail.,7,CNS,bank,-
+2,Explain IP Address Spoofing in detail.,7,CNS,bank,-
+2,Explain Source Routing Attacks in detail.,7,CNS,bank,-
+2,Explain Tiny Fragment Attacks in detail.,7,CNS,bank,-
+2,Explain a) IP Address Spoofing in detail.,7,CNS,bank,-
+2,Explain b) Source Routing Attacks in detail.,7,CNS,bank,-
+2,Explain c) Tiny Fragment Attacks in detail.,7,CNS,bank,-
+2,Explain IP packets pass through a variety of physical networks in detail.,7,CNS,bank,-
+2,Explain Application Gateways in detail.,7,CNS,bank,-
+2,Explain An application gateway is also called a in detail.,7,CNS,bank,-
+2,Explain proxy server in detail.,7,CNS,bank,-
+2,Explain Application gateways typically work as follows in detail.,7,CNS,bank,-
+2,Explain set up a connection for actual communication in detail.,7,CNS,bank,-
+2,Discuss Network Security with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss Packet Filters with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss decides to either forward or discard the packet with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss It is also called as with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss screening router with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss screening filter with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss Such a with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss firewall implementation with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss from the local network to the outside world and vice versa) with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss A packet filter performs the following functions with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss Receive each packet as it arrives with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss For example with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss The rules specified in the packet filter work as follows with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss a) Incoming packets from network with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss are not allowed. They are blocked as a security precaution with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss are blocked with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss c) Incoming packets intended for a specific internal host with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss d) Outgoing packets intended for port with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss IP Address Spoofing with suitable diagram and applications.,15,CNS,bank,-
+2,Discuss Source Routing Attacks with suitable diagram and applications.,15,CNS,bank,-
+1,State the main components involved in a data communication system.,2,CNCC,bank,-
+1,Mention the essential characteristics of a data communication system.,2,CNCC,bank,-
+1,What is meant by the OSI reference model?,2,CNCC,bank,-
+1,State the concept of computer networking.,2,CNCC,bank,-
+1,List the various multiplexing techniques.,2,CNCC,bank,-
+1,Distinguish between half-duplex and full-duplex transmission.,2,CNCC,bank,-
+1,Mention any two examples of guided transmission media.,2,CNCC,bank,-
+1,Compare point-to-point and multipoint communication.,2,CNCC,bank,-
+1,List any two types of computer networks.,2,CNCC,bank,-
+1,State the meaning of radio waves in wireless communication.,2,CNCC,bank,-
+1,Distinguish between LAN and WAN.,2,CNCC,bank,-
+1,Name any two types of transmission media.,2,CNCC,bank,-
+1,State the importance of circuit switching in networking.,2,CNCC,bank,-
+1,What is meant by network topology?,2,CNCC,bank,-
+1,List the seven layers of the OSI model.,2,CNCC,bank,-
+1,Discuss the different multiplexing techniques with suitable explanation.,7,CNCC,bank,-
+1,Write a brief note on components and characteristics of data communication.,7,CNCC,bank,-
+1,Describe various network topologies with suitable diagrams.,7,CNCC,bank,-
+1,Examine guided and unguided transmission media in detail.,15,CNCC,bank,-
+1,Describe guided transmission media and their applications.,7,CNCC,bank,-
+1,Discuss unguided transmission media along with their advantages.,7,CNCC,bank,-
+1,Explain the OSI model and functions of its seven layers.,15,CNCC,bank,-
+1,Differentiate between packet switching and circuit switching.,7,CNCC,bank,-
+2,State the concept of error detection and correction.,2,CNCC,bank,-
+2,What is meant by cyclic redundancy check (CRC)?,2,CNCC,bank,-
+2,List any two error detection techniques.,2,CNCC,bank,-
+2,State the meaning of hamming distance.,2,CNCC,bank,-
+2,Mention the different operating modes of HDLC.,2,CNCC,bank,-
+2,Explain how hamming distance is calculated with an example.,2,CNCC,bank,-
+2,List the classes of IPv4 addresses along with their ranges.,2,CNCC,bank,-
+2,State the purpose of High-Level Data Link Control (HDLC).,2,CNCC,bank,-
+2,What is meant by Point-to-Point Protocol (PPP)?,2,CNCC,bank,-
+2,State the differences between HDLC and PPP.,2,CNCC,bank,-
+2,Mention any two advantages of DHCP.,2,CNCC,bank,-
+2,Discuss character-oriented and bit-oriented framing techniques.,7,CNCC,bank,-
+2,Compare connection-oriented and connectionless protocols.,7,CNCC,bank,-
+2,Analyze the structure and types of HDLC frames.,15,CNCC,bank,-
+2,Discuss cyclic redundancy check with a suitable example.,15,CNCC,bank,-
+2,Solve IPv4 address calculations using binary and decimal notation.,7,CNCC,bank,-
+2,Describe DLC services including framing and protocol types.,7,CNCC,bank,-
+2,Examine cyclic codes and CRC operation at sender and receiver.,15,CNCC,bank,-
+3,State the primary responsibility of the Transport Layer.,2,CNCC,bank,-
+3,What is meant by a socket?,2,CNCC,bank,-
+3,State the concept of Stop-and-Wait protocol.,2,CNCC,bank,-
+3,State the purpose of Domain Name System (DNS).,2,CNCC,bank,-
+3,What is the function of FTP?,2,CNCC,bank,-
+3,Name any two Transport Layer protocols.,2,CNCC,bank,-
+3,State the major limitation of Stop-and-Wait protocol.,2,CNCC,bank,-
+3,State the purpose of UDP.,2,CNCC,bank,-
+3,What is meant by World Wide Web (WWW)?,2,CNCC,bank,-
+3,State the role of HTTP.,2,CNCC,bank,-
+3,Mention the major components of an e-mail system.,2,CNCC,bank,-
+3,Name the two operating modes of FTP.,2,CNCC,bank,-
+3,Describe Stop-and-Wait protocol with diagrams and FSM.,15,CNCC,bank,-
+3,Discuss the services provided by TCP in detail.,15,CNCC,bank,-
+3,Describe the Simple protocol using diagrams and FSM.,15,CNCC,bank,-
+3,Explain the client-server computing model with an example.,7,CNCC,bank,-
+3,Describe the working and importance of FTP.,7,CNCC,bank,-
+3,Explain the structure and operation of an e-mail system.,7,CNCC,bank,-
+3,Discuss the services offered by UDP.,7,CNCC,bank,-
+3,Explain the working of Selective Repeat protocol.,7,CNCC,bank,-
+4,Mention any two benefits of cloud computing.,2,CNCC,bank,-
+4,State the meaning of cloud computing.,2,CNCC,bank,-
+4,What is meant by grid computing?,2,CNCC,bank,-
+4,State the concept of virtualization.,2,CNCC,bank,-
+4,What is meant by a distributed system?,2,CNCC,bank,-
+4,State the concept of utility-oriented computing.,2,CNCC,bank,-
+4,State the meaning of service-oriented computing.,2,CNCC,bank,-
+4,Name any two virtualization techniques used in cloud.,2,CNCC,bank,-
+4,State the role of Web 2.0 in cloud computing.,2,CNCC,bank,-
+4,Discuss the characteristics and benefits of cloud computing.,7,CNCC,bank,-
+4,Analyze the major challenges faced in cloud computing.,7,CNCC,bank,-
+4,Discuss the contribution of Web 2.0 to cloud evolution.,7,CNCC,bank,-
+4,Examine service-oriented computing in detail.,7,CNCC,bank,-
+4,Discuss utility-oriented computing and its applications.,7,CNCC,bank,-
+4,Explain various cloud platforms and technologies.,15,CNCC,bank,-
+4,Describe virtualization and distributed systems in cloud.,15,CNCC,bank,-
+5,State the application sectors of community cloud.,2,CNCC,bank,-
+5,What is meant by hardware as a service?,2,CNCC,bank,-
+5,Mention key benefits of cloud computing.,2,CNCC,bank,-
+5,State the concept of pay-as-you-go pricing model.,2,CNCC,bank,-
+5,What is meant by cloud service deployment?,2,CNCC,bank,-
+5,State the major challenge in cloud security.,2,CNCC,bank,-
+5,List the open challenges in cloud computing.,2,CNCC,bank,-
+5,Describe cloud reference architecture and its components.,15,CNCC,bank,-
+5,Explain different types of cloud deployment models.,15,CNCC,bank,-
+5,Write a short note on economic aspects of cloud computing.,7,CNCC,bank,-
+5,Discuss major open challenges in cloud computing.,7,CNCC,bank,-
+1,What is Network Security?,2,CNCC,bank,-
+1,What is Packet Filters?,2,CNCC,bank,-
+1,What is decides to either forward or discard the packet?,2,CNCC,bank,-
+1,What is It is also called as?,2,CNCC,bank,-
+1,What is screening router?,2,CNCC,bank,-
+1,What is screening filter?,2,CNCC,bank,-
+1,What is Such a?,2,CNCC,bank,-
+1,What is firewall implementation?,2,CNCC,bank,-
+1,What is from the local network to the outside world and vice versa)?,2,CNCC,bank,-
+1,What is A packet filter performs the following functions?,2,CNCC,bank,-
+1,What is Receive each packet as it arrives?,2,CNCC,bank,-
+1,What is For example?,2,CNCC,bank,-
+1,What is The rules specified in the packet filter work as follows?,2,CNCC,bank,-
+1,What is a) Incoming packets from network?,2,CNCC,bank,-
+1,What is are not allowed. They are blocked as a security precaution?,2,CNCC,bank,-
+1,What is are blocked?,2,CNCC,bank,-
+1,What is c) Incoming packets intended for a specific internal host?,2,CNCC,bank,-
+1,What is d) Outgoing packets intended for port?,2,CNCC,bank,-
+1,What is IP Address Spoofing?,2,CNCC,bank,-
+1,What is Source Routing Attacks?,2,CNCC,bank,-
+1,What is Tiny Fragment Attacks?,2,CNCC,bank,-
+1,What is a) IP Address Spoofing?,2,CNCC,bank,-
+1,What is b) Source Routing Attacks?,2,CNCC,bank,-
+1,What is c) Tiny Fragment Attacks?,2,CNCC,bank,-
+1,What is IP packets pass through a variety of physical networks?,2,CNCC,bank,-
+1,What is Application Gateways?,2,CNCC,bank,-
+1,What is An application gateway is also called a?,2,CNCC,bank,-
+1,What is proxy server?,2,CNCC,bank,-
+1,What is Application gateways typically work as follows?,2,CNCC,bank,-
+1,What is set up a connection for actual communication?,2,CNCC,bank,-
+1,What is user id?,2,CNCC,bank,-
+1,What is the password?,2,CNCC,bank,-
+1,What is required to access the services of the application gateway?,2,CNCC,bank,-
+1,What is The user provides this information to the application gateway?,2,CNCC,bank,-
+1,"What is that there is a variation of the application gateway, called as?",2,CNCC,bank,-
+1,What is circuit gateway?,2,CNCC,bank,-
+1,What is creates a new connection between itself and the remote host?,2,CNCC,bank,-
+1,What is Basic Concepts?,2,CNCC,bank,-
+1,What is TCP/IP) protocol suite?,2,CNCC,bank,-
+1,What is The TCP/IP protocol suite contains?,2,CNCC,bank,-
+1,Explain Network Security in detail.,7,CNCC,bank,-
+1,Explain Packet Filters in detail.,7,CNCC,bank,-
+1,Explain decides to either forward or discard the packet in detail.,7,CNCC,bank,-
+1,Explain It is also called as in detail.,7,CNCC,bank,-
+1,Explain screening router in detail.,7,CNCC,bank,-
+1,Explain screening filter in detail.,7,CNCC,bank,-
+1,Explain Such a in detail.,7,CNCC,bank,-
+1,Explain firewall implementation in detail.,7,CNCC,bank,-
+1,Explain from the local network to the outside world and vice versa) in detail.,7,CNCC,bank,-
+1,Explain A packet filter performs the following functions in detail.,7,CNCC,bank,-
+1,Explain Receive each packet as it arrives in detail.,7,CNCC,bank,-
+1,Explain For example in detail.,7,CNCC,bank,-
+1,Explain The rules specified in the packet filter work as follows in detail.,7,CNCC,bank,-
+1,Explain a) Incoming packets from network in detail.,7,CNCC,bank,-
+1,Explain are not allowed. They are blocked as a security precaution in detail.,7,CNCC,bank,-
+1,Explain are blocked in detail.,7,CNCC,bank,-
+1,Explain c) Incoming packets intended for a specific internal host in detail.,7,CNCC,bank,-
+1,Explain d) Outgoing packets intended for port in detail.,7,CNCC,bank,-
+1,Explain IP Address Spoofing in detail.,7,CNCC,bank,-
+1,Explain Source Routing Attacks in detail.,7,CNCC,bank,-
+1,Explain Tiny Fragment Attacks in detail.,7,CNCC,bank,-
+1,Explain a) IP Address Spoofing in detail.,7,CNCC,bank,-
+1,Explain b) Source Routing Attacks in detail.,7,CNCC,bank,-
+1,Explain c) Tiny Fragment Attacks in detail.,7,CNCC,bank,-
+1,Explain IP packets pass through a variety of physical networks in detail.,7,CNCC,bank,-
+1,Explain Application Gateways in detail.,7,CNCC,bank,-
+1,Explain An application gateway is also called a in detail.,7,CNCC,bank,-
+1,Explain proxy server in detail.,7,CNCC,bank,-
+1,Explain Application gateways typically work as follows in detail.,7,CNCC,bank,-
+1,Explain set up a connection for actual communication in detail.,7,CNCC,bank,-
+1,Discuss Network Security with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Packet Filters with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss decides to either forward or discard the packet with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss It is also called as with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss screening router with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss screening filter with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Such a with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss firewall implementation with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss from the local network to the outside world and vice versa) with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss A packet filter performs the following functions with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Receive each packet as it arrives with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss For example with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss The rules specified in the packet filter work as follows with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss a) Incoming packets from network with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss are not allowed. They are blocked as a security precaution with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss are blocked with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss c) Incoming packets intended for a specific internal host with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss d) Outgoing packets intended for port with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss IP Address Spoofing with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Source Routing Attacks with suitable diagram and applications.,15,CNCC,bank,-
+5,What is Computer-Based Asymmetric-Key Cryptography Algorithms?,2,CNCC,bank,-
+5,What is Overview Of Asymmetric-Key Cryptography?,2,CNCC,bank,-
+5,What is wants to send a message to?,2,CNCC,bank,-
+5,What is exactly reverse steps take place?,2,CNCC,bank,-
+5,What is encrypts the message using?,2,CNCC,bank,-
+5,What is A’s public key?,2,CNCC,bank,-
+5,"What is Therefore, only?",2,CNCC,bank,-
+5,"What is can decrypt the message back to its original form, using?",2,CNCC,bank,-
+5,What is her private key?,2,CNCC,bank,-
+5,What is Rsa Algorithm?,2,CNCC,bank,-
+5,What is The RSA algorithm is the most popular and proven asymmetric-key cryptographic algorithm?,2,CNCC,bank,-
+5,What is For instance?,2,CNCC,bank,-
+5,"What is is a prime number, because it can be divided only by?",2,CNCC,bank,-
+5,What is not a prime number?,2,CNCC,bank,-
+5,What is because other than by?,2,CNCC,bank,-
+5,What is it can?,2,CNCC,bank,-
+5,What is also be divided by 2?,2,CNCC,bank,-
+5,What is are non-prime numbers?,2,CNCC,bank,-
+5,What is The private and public keys in RSA are based on?,2,CNCC,bank,-
+5,What is very large?,2,CNCC,bank,-
+5,What is made up of 100 or more digits?,2,CNCC,bank,-
+5,What is prime numbers?,2,CNCC,bank,-
+5,What is The algorithm itself is quite simple (unlike the symmetric-key cryptographic algorithms)?,2,CNCC,bank,-
+5,"What is However, the?",2,CNCC,bank,-
+5,What is real challenge in the case?,2,CNCC,bank,-
+5,What is of RSA is the selection and?,2,CNCC,bank,-
+5,What is generation of the public and private keys?,2,CNCC,bank,-
+5,What is Let us now understand?,2,CNCC,bank,-
+5,What is how the public and private keys are generated?,2,CNCC,bank,-
+5,"What is Let P = 7, Q = 17?",2,CNCC,bank,-
+5,What is Security of RSA?,2,CNCC,bank,-
+5,What is Some of the main possible attacks on RSA?,2,CNCC,bank,-
+5,What is Plain-text Attacks?,2,CNCC,bank,-
+5,What is Chosen-cipher text attack?,2,CNCC,bank,-
+5,What is Factorization Attack?,2,CNCC,bank,-
+5,What is Attacks on the Encryption Key?,2,CNCC,bank,-
+5,What is Attacks on the Decryption Key?,2,CNCC,bank,-
+5,What is The plain-text attacks are classified further into three sub-categories?,2,CNCC,bank,-
+5,What is a) Short-message Attack?,2,CNCC,bank,-
+5,What is b) Cycling Attack?,2,CNCC,bank,-
+5,Explain Computer-Based Asymmetric-Key Cryptography Algorithms in detail.,7,CNCC,bank,-
+5,Explain Overview Of Asymmetric-Key Cryptography in detail.,7,CNCC,bank,-
+5,Explain wants to send a message to in detail.,7,CNCC,bank,-
+5,Explain exactly reverse steps take place in detail.,7,CNCC,bank,-
+5,Explain encrypts the message using in detail.,7,CNCC,bank,-
+5,Explain A’s public key in detail.,7,CNCC,bank,-
+5,"Explain Therefore, only in detail.",7,CNCC,bank,-
+5,"Explain can decrypt the message back to its original form, using in detail.",7,CNCC,bank,-
+5,Explain her private key in detail.,7,CNCC,bank,-
+5,Explain Rsa Algorithm in detail.,7,CNCC,bank,-
+5,Explain The RSA algorithm is the most popular and proven asymmetric-key cryptographic algorithm in detail.,7,CNCC,bank,-
+5,Explain For instance in detail.,7,CNCC,bank,-
+5,"Explain is a prime number, because it can be divided only by in detail.",7,CNCC,bank,-
+5,Explain not a prime number in detail.,7,CNCC,bank,-
+5,Explain because other than by in detail.,7,CNCC,bank,-
+5,Explain it can in detail.,7,CNCC,bank,-
+5,Explain also be divided by 2 in detail.,7,CNCC,bank,-
+5,Explain are non-prime numbers in detail.,7,CNCC,bank,-
+5,Explain The private and public keys in RSA are based on in detail.,7,CNCC,bank,-
+5,Explain very large in detail.,7,CNCC,bank,-
+5,Explain made up of 100 or more digits in detail.,7,CNCC,bank,-
+5,Explain prime numbers in detail.,7,CNCC,bank,-
+5,Explain The algorithm itself is quite simple (unlike the symmetric-key cryptographic algorithms) in detail.,7,CNCC,bank,-
+5,"Explain However, the in detail.",7,CNCC,bank,-
+5,Explain real challenge in the case in detail.,7,CNCC,bank,-
+5,Explain of RSA is the selection and in detail.,7,CNCC,bank,-
+5,Explain generation of the public and private keys in detail.,7,CNCC,bank,-
+5,Explain Let us now understand in detail.,7,CNCC,bank,-
+5,Explain how the public and private keys are generated in detail.,7,CNCC,bank,-
+5,"Explain Let P = 7, Q = 17 in detail.",7,CNCC,bank,-
+5,Discuss Computer-Based Asymmetric-Key Cryptography Algorithms with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss Overview Of Asymmetric-Key Cryptography with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss wants to send a message to with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss exactly reverse steps take place with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss encrypts the message using with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss A’s public key with suitable diagram and applications.,15,CNCC,bank,-
+5,"Discuss Therefore, only with suitable diagram and applications.",15,CNCC,bank,-
+5,"Discuss can decrypt the message back to its original form, using with suitable diagram and applications.",15,CNCC,bank,-
+5,Discuss her private key with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss Rsa Algorithm with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss The RSA algorithm is the most popular and proven asymmetric-key cryptographic algorithm with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss For instance with suitable diagram and applications.,15,CNCC,bank,-
+5,"Discuss is a prime number, because it can be divided only by with suitable diagram and applications.",15,CNCC,bank,-
+5,Discuss not a prime number with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss because other than by with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss it can with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss also be divided by 2 with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss are non-prime numbers with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss The private and public keys in RSA are based on with suitable diagram and applications.,15,CNCC,bank,-
+5,Discuss very large with suitable diagram and applications.,15,CNCC,bank,-
+4,What is Computer-Based Symmetric-Key Cryptographic Algorithms?,2,CNCC,bank,-
+4,What is Algorithm Modes?,2,CNCC,bank,-
+4,What is Cipher Block Chaining (CBC) Mode?,2,CNCC,bank,-
+4,What is Cipher Block Chaining (CBC)?,2,CNCC,bank,-
+4,What is The first step receives?,2,CNCC,bank,-
+4,What is two inputs?,2,CNCC,bank,-
+4,What is Initialization Vector (IV)?,2,CNCC,bank,-
+4,What is Cipher Feedback (CFB) Mode?,2,CNCC,bank,-
+4,What is stream cipher must be used?,2,CNCC,bank,-
+4,What is The Cipher Feedback (CFB) mode is useful in such cases?,2,CNCC,bank,-
+4,What is In this mode?,2,CNCC,bank,-
+4,What is data is encrypted in units that are smaller (?,2,CNCC,bank,-
+4,What is e.g. they could be of size 8 bits?,2,CNCC,bank,-
+4,What is than a defined block size (?,2,CNCC,bank,-
+4,What is which is usually 64 bits?,2,CNCC,bank,-
+4,What is Output Feedback (OFB)?,2,CNCC,bank,-
+4,What is cipher text is fed into the next stage of encryption process?,2,CNCC,bank,-
+4,What is An Overview Of Symmetric-Key Cryptography?,2,CNCC,bank,-
+4,"What is Symmetric-key cryptography is referred to by various other terms, such as?",2,CNCC,bank,-
+4,What is secret-key cryptography?,2,CNCC,bank,-
+4,What is parties must agree upon the key?,2,CNCC,bank,-
+4,"What is before any transmission begins, and nobody else should know about it?",2,CNCC,bank,-
+4,"What is Basically, at the?",2,CNCC,bank,-
+4,What is sender’s end (A)?,2,CNCC,bank,-
+4,What is the key transforms the plain-text message into a cipher-text form. At the?,2,CNCC,bank,-
+4,What is receiver’s end (B)?,2,CNCC,bank,-
+4,What is In practical situations?,2,CNCC,bank,-
+4,What is symmetric-key cryptography has a few problems?,2,CNCC,bank,-
+4,What is The first problem here is that of?,2,CNCC,bank,-
+4,What is key agreement?,2,CNCC,bank,-
+4,What is key distribution?,2,CNCC,bank,-
+4,What is The problem is: in the first place?,2,CNCC,bank,-
+4,What is how do two parties agree on a key??,2,CNCC,bank,-
+4,What is One solution is that somebody from the sender’s end?,2,CNCC,bank,-
+4,What is physically visits?,2,CNCC,bank,-
+4,What is the receiver and hands over the key. Another way is to?,2,CNCC,bank,-
+4,What is courier a paper?,2,CNCC,bank,-
+4,What is send the key over the network?,2,CNCC,bank,-
+4,"What is to B and ask for confirmation. But then, if an?",2,CNCC,bank,-
+4,What is intruder gets the message?,2,CNCC,bank,-
+4,Explain Computer-Based Symmetric-Key Cryptographic Algorithms in detail.,7,CNCC,bank,-
+4,Explain Algorithm Modes in detail.,7,CNCC,bank,-
+4,Explain Cipher Block Chaining (CBC) Mode in detail.,7,CNCC,bank,-
+4,Explain Cipher Block Chaining (CBC) in detail.,7,CNCC,bank,-
+4,Explain The first step receives in detail.,7,CNCC,bank,-
+4,Explain two inputs in detail.,7,CNCC,bank,-
+4,Explain Initialization Vector (IV) in detail.,7,CNCC,bank,-
+4,Explain Cipher Feedback (CFB) Mode in detail.,7,CNCC,bank,-
+4,Explain stream cipher must be used in detail.,7,CNCC,bank,-
+4,Explain The Cipher Feedback (CFB) mode is useful in such cases in detail.,7,CNCC,bank,-
+4,Explain In this mode in detail.,7,CNCC,bank,-
+4,Explain data is encrypted in units that are smaller ( in detail.,7,CNCC,bank,-
+4,Explain e.g. they could be of size 8 bits in detail.,7,CNCC,bank,-
+4,Explain than a defined block size ( in detail.,7,CNCC,bank,-
+4,Explain which is usually 64 bits in detail.,7,CNCC,bank,-
+4,Explain Output Feedback (OFB) in detail.,7,CNCC,bank,-
+4,Explain cipher text is fed into the next stage of encryption process in detail.,7,CNCC,bank,-
+4,Explain An Overview Of Symmetric-Key Cryptography in detail.,7,CNCC,bank,-
+4,"Explain Symmetric-key cryptography is referred to by various other terms, such as in detail.",7,CNCC,bank,-
+4,Explain secret-key cryptography in detail.,7,CNCC,bank,-
+4,Explain parties must agree upon the key in detail.,7,CNCC,bank,-
+4,"Explain before any transmission begins, and nobody else should know about it in detail.",7,CNCC,bank,-
+4,"Explain Basically, at the in detail.",7,CNCC,bank,-
+4,Explain sender’s end (A) in detail.,7,CNCC,bank,-
+4,Explain the key transforms the plain-text message into a cipher-text form. At the in detail.,7,CNCC,bank,-
+4,Explain receiver’s end (B) in detail.,7,CNCC,bank,-
+4,Explain In practical situations in detail.,7,CNCC,bank,-
+4,Explain symmetric-key cryptography has a few problems in detail.,7,CNCC,bank,-
+4,Explain The first problem here is that of in detail.,7,CNCC,bank,-
+4,Explain key agreement in detail.,7,CNCC,bank,-
+4,Discuss Computer-Based Symmetric-Key Cryptographic Algorithms with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss Algorithm Modes with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss Cipher Block Chaining (CBC) Mode with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss Cipher Block Chaining (CBC) with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss The first step receives with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss two inputs with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss Initialization Vector (IV) with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss Cipher Feedback (CFB) Mode with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss stream cipher must be used with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss The Cipher Feedback (CFB) mode is useful in such cases with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss In this mode with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss data is encrypted in units that are smaller ( with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss e.g. they could be of size 8 bits with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss than a defined block size ( with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss which is usually 64 bits with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss Output Feedback (OFB) with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss cipher text is fed into the next stage of encryption process with suitable diagram and applications.,15,CNCC,bank,-
+4,Discuss An Overview Of Symmetric-Key Cryptography with suitable diagram and applications.,15,CNCC,bank,-
+4,"Discuss Symmetric-key cryptography is referred to by various other terms, such as with suitable diagram and applications.",15,CNCC,bank,-
+4,Discuss secret-key cryptography with suitable diagram and applications.,15,CNCC,bank,-
+1,What is Cryptography Techniques?,2,CNCC,bank,-
+1,What is Transposition Techniques?,2,CNCC,bank,-
+1,What is Rail-Fence Technique?,2,CNCC,bank,-
+1,What is The rail-fence technique is an example of transposition?,2,CNCC,bank,-
+1,What is It uses a simple algorithm?,2,CNCC,bank,-
+1,What is Simple Columnar Transposition Technique?,2,CNCC,bank,-
+1,What is Basic technique?,2,CNCC,bank,-
+1,What is Simple columnar transposition technique with multiple rounds?,2,CNCC,bank,-
+1,What is uses a?,2,CNCC,bank,-
+1,What is one-time pad?,2,CNCC,bank,-
+1,What is Let us apply the?,2,CNCC,bank,-
+1,What is cipher algorithm?,2,CNCC,bank,-
+1,What is to a plain-text message?,2,CNCC,bank,-
+1,What is How Are You?,2,CNCC,bank,-
+1,What is using a?,2,CNCC,bank,-
+1,What is to produce a?,2,CNCC,bank,-
+1,What is cipher-text message?,2,CNCC,bank,-
+1,What is as shown?,2,CNCC,bank,-
+1,What is Book Cipher/Running-Key Cipher?,2,CNCC,bank,-
+1,"What is The idea used in book cipher, also incorrectly called?",2,CNCC,bank,-
+1,What is running-key cipher?,2,CNCC,bank,-
+1,"What is is quite simple, and is similar in principle to the?",2,CNCC,bank,-
+1,What is Encryption and Decryption?,2,CNCC,bank,-
+1,What is Basic Terms?,2,CNCC,bank,-
+1,What is Every encryption and decryption process?,2,CNCC,bank,-
+1,What is has two aspects?,2,CNCC,bank,-
+1,What is and the?,2,CNCC,bank,-
+1,What is used for encryption and decryption?,2,CNCC,bank,-
+1,What is Symmetric And Asymmetric Key Cryptography?,2,CNCC,bank,-
+1,What is Symmetric Key Cryptography and the Problem of Key Distribution?,2,CNCC,bank,-
+1,What is Diffie-Hellman Key-Exchange/Agreement Algorithm?,2,CNCC,bank,-
+1,What is Asymmetric Key Operation?,2,CNCC,bank,-
+1,What is Whitefield Diffie?,2,CNCC,bank,-
+1,What is Martin Hellman?,2,CNCC,bank,-
+1,What is devised an amazing solution to the problem of?,2,CNCC,bank,-
+1,What is key agreement?,2,CNCC,bank,-
+1,What is key exchange?,2,CNCC,bank,-
+1,What is in 1976. This solution is called the?,2,CNCC,bank,-
+1,What is only for key agreement?,2,CNCC,bank,-
+1,What is not for encryption or decryption?,2,CNCC,bank,-
+1,Explain Cryptography Techniques in detail.,7,CNCC,bank,-
+1,Explain Transposition Techniques in detail.,7,CNCC,bank,-
+1,Explain Rail-Fence Technique in detail.,7,CNCC,bank,-
+1,Explain The rail-fence technique is an example of transposition in detail.,7,CNCC,bank,-
+1,Explain It uses a simple algorithm in detail.,7,CNCC,bank,-
+1,Explain Simple Columnar Transposition Technique in detail.,7,CNCC,bank,-
+1,Explain Basic technique in detail.,7,CNCC,bank,-
+1,Explain Simple columnar transposition technique with multiple rounds in detail.,7,CNCC,bank,-
+1,Explain uses a in detail.,7,CNCC,bank,-
+1,Explain one-time pad in detail.,7,CNCC,bank,-
+1,Explain Let us apply the in detail.,7,CNCC,bank,-
+1,Explain cipher algorithm in detail.,7,CNCC,bank,-
+1,Explain to a plain-text message in detail.,7,CNCC,bank,-
+1,Explain How Are You in detail.,7,CNCC,bank,-
+1,Explain using a in detail.,7,CNCC,bank,-
+1,Explain to produce a in detail.,7,CNCC,bank,-
+1,Explain cipher-text message in detail.,7,CNCC,bank,-
+1,Explain as shown in detail.,7,CNCC,bank,-
+1,Explain Book Cipher/Running-Key Cipher in detail.,7,CNCC,bank,-
+1,"Explain The idea used in book cipher, also incorrectly called in detail.",7,CNCC,bank,-
+1,Explain running-key cipher in detail.,7,CNCC,bank,-
+1,"Explain is quite simple, and is similar in principle to the in detail.",7,CNCC,bank,-
+1,Explain Encryption and Decryption in detail.,7,CNCC,bank,-
+1,Explain Basic Terms in detail.,7,CNCC,bank,-
+1,Explain Every encryption and decryption process in detail.,7,CNCC,bank,-
+1,Explain has two aspects in detail.,7,CNCC,bank,-
+1,Explain and the in detail.,7,CNCC,bank,-
+1,Explain used for encryption and decryption in detail.,7,CNCC,bank,-
+1,Explain Symmetric And Asymmetric Key Cryptography in detail.,7,CNCC,bank,-
+1,Explain Symmetric Key Cryptography and the Problem of Key Distribution in detail.,7,CNCC,bank,-
+1,Discuss Cryptography Techniques with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Transposition Techniques with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Rail-Fence Technique with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss The rail-fence technique is an example of transposition with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss It uses a simple algorithm with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Simple Columnar Transposition Technique with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Basic technique with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Simple columnar transposition technique with multiple rounds with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss uses a with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss one-time pad with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Let us apply the with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss cipher algorithm with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss to a plain-text message with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss How Are You with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss using a with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss to produce a with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss cipher-text message with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss as shown with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Book Cipher/Running-Key Cipher with suitable diagram and applications.,15,CNCC,bank,-
+1,"Discuss The idea used in book cipher, also incorrectly called with suitable diagram and applications.",15,CNCC,bank,-
+1,What is Security Approaches?,2,CNCC,bank,-
+1,What is Security Models?,2,CNCC,bank,-
+1,What is No Security?,2,CNCC,bank,-
+1,"What is In this simplest case, the approach could be a decision to implement?",2,CNCC,bank,-
+1,What is no security at all?,2,CNCC,bank,-
+1,What is Security through Obscurity?,2,CNCC,bank,-
+1,"What is In this model, a system is secure simply because?",2,CNCC,bank,-
+1,What is nobody knows about its existence and contents?,2,CNCC,bank,-
+1,What is This approach?,2,CNCC,bank,-
+1,What is cannot work for too long?,2,CNCC,bank,-
+1,What is Host Security?,2,CNCC,bank,-
+1,"What is In this scheme, the?",2,CNCC,bank,-
+1,What is security for each host is enforced individually?,2,CNCC,bank,-
+1,What is focus is to control network access?,2,CNCC,bank,-
+1,What is Security-Management Practices?,2,CNCC,bank,-
+1,What is Good security-management practices always talk of a?,2,CNCC,bank,-
+1,What is security policy being in place?,2,CNCC,bank,-
+1,What is Putting a security policy in place is actually quite tough. A?,2,CNCC,bank,-
+1,What is good security policy?,2,CNCC,bank,-
+1,What is and its proper implementation go a long way in?,2,CNCC,bank,-
+1,What is ensuring adequate?,2,CNCC,bank,-
+1,What is How much money and effort does this security implementation cost??,2,CNCC,bank,-
+1,What is What is the mechanism of providing security??,2,CNCC,bank,-
+1,What is Cultural Issues?,2,CNCC,bank,-
+1,"What is Does the policy complement the people’s expectations, working style and beliefs??",2,CNCC,bank,-
+1,What is Does the policy meet the legal requirements??,2,CNCC,bank,-
+1,What is a) Explanation of the policy to all concerned?,2,CNCC,bank,-
+1,What is b) Outline everybody’s responsibilities?,2,CNCC,bank,-
+1,What is c) Use simple language in all communications?,2,CNCC,bank,-
+1,What is d) Accountability should be established?,2,CNCC,bank,-
+1,What is e) Provide for exceptions and periodic reviews?,2,CNCC,bank,-
+1,What is Principles Of Security?,2,CNCC,bank,-
+1,What is Access Control?,2,CNCC,bank,-
+1,What is An example?,2,CNCC,bank,-
+1,What is A real-life example of this could be the case of a?,2,CNCC,bank,-
+1,"What is user C, posing as user A?",2,CNCC,bank,-
+1,What is sending a funds transfer request?,2,CNCC,bank,-
+1,What is from A’s account to C’s account?,2,CNCC,bank,-
+1,Explain Security Approaches in detail.,7,CNCC,bank,-
+1,Explain Security Models in detail.,7,CNCC,bank,-
+1,Explain No Security in detail.,7,CNCC,bank,-
+1,"Explain In this simplest case, the approach could be a decision to implement in detail.",7,CNCC,bank,-
+1,Explain no security at all in detail.,7,CNCC,bank,-
+1,Explain Security through Obscurity in detail.,7,CNCC,bank,-
+1,"Explain In this model, a system is secure simply because in detail.",7,CNCC,bank,-
+1,Explain nobody knows about its existence and contents in detail.,7,CNCC,bank,-
+1,Explain This approach in detail.,7,CNCC,bank,-
+1,Explain cannot work for too long in detail.,7,CNCC,bank,-
+1,Explain Host Security in detail.,7,CNCC,bank,-
+1,"Explain In this scheme, the in detail.",7,CNCC,bank,-
+1,Explain security for each host is enforced individually in detail.,7,CNCC,bank,-
+1,Explain focus is to control network access in detail.,7,CNCC,bank,-
+1,Explain Security-Management Practices in detail.,7,CNCC,bank,-
+1,Explain Good security-management practices always talk of a in detail.,7,CNCC,bank,-
+1,Explain security policy being in place in detail.,7,CNCC,bank,-
+1,Explain Putting a security policy in place is actually quite tough. A in detail.,7,CNCC,bank,-
+1,Explain good security policy in detail.,7,CNCC,bank,-
+1,Explain and its proper implementation go a long way in in detail.,7,CNCC,bank,-
+1,Explain ensuring adequate in detail.,7,CNCC,bank,-
+1,Explain How much money and effort does this security implementation cost? in detail.,7,CNCC,bank,-
+1,Explain What is the mechanism of providing security? in detail.,7,CNCC,bank,-
+1,Explain Cultural Issues in detail.,7,CNCC,bank,-
+1,"Explain Does the policy complement the people’s expectations, working style and beliefs? in detail.",7,CNCC,bank,-
+1,Explain Does the policy meet the legal requirements? in detail.,7,CNCC,bank,-
+1,Explain a) Explanation of the policy to all concerned in detail.,7,CNCC,bank,-
+1,Explain b) Outline everybody’s responsibilities in detail.,7,CNCC,bank,-
+1,Explain c) Use simple language in all communications in detail.,7,CNCC,bank,-
+1,Discuss Security Approaches with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Security Models with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss No Security with suitable diagram and applications.,15,CNCC,bank,-
+1,"Discuss In this simplest case, the approach could be a decision to implement with suitable diagram and applications.",15,CNCC,bank,-
+1,Discuss no security at all with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Security through Obscurity with suitable diagram and applications.,15,CNCC,bank,-
+1,"Discuss In this model, a system is secure simply because with suitable diagram and applications.",15,CNCC,bank,-
+1,Discuss nobody knows about its existence and contents with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss This approach with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss cannot work for too long with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Host Security with suitable diagram and applications.,15,CNCC,bank,-
+1,"Discuss In this scheme, the with suitable diagram and applications.",15,CNCC,bank,-
+1,Discuss security for each host is enforced individually with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss focus is to control network access with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Security-Management Practices with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Good security-management practices always talk of a with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss security policy being in place with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss Putting a security policy in place is actually quite tough. A with suitable diagram and applications.,15,CNCC,bank,-
+1,Discuss good security policy with suitable diagram and applications.,15,CNCC,bank,-
+3,What is Cryptography Techniques?,2,CNCC,bank,-
+3,What is Transposition Techniques?,2,CNCC,bank,-
+3,What is Rail-Fence Technique?,2,CNCC,bank,-
+3,What is The rail-fence technique is an example of transposition?,2,CNCC,bank,-
+3,What is It uses a simple algorithm?,2,CNCC,bank,-
+3,What is Simple Columnar Transposition Technique?,2,CNCC,bank,-
+3,What is Basic technique?,2,CNCC,bank,-
+3,What is Simple columnar transposition technique with multiple rounds?,2,CNCC,bank,-
+3,What is uses a?,2,CNCC,bank,-
+3,What is one-time pad?,2,CNCC,bank,-
+3,What is Let us apply the?,2,CNCC,bank,-
+3,What is cipher algorithm?,2,CNCC,bank,-
+3,What is to a plain-text message?,2,CNCC,bank,-
+3,What is How Are You?,2,CNCC,bank,-
+3,What is using a?,2,CNCC,bank,-
+3,What is to produce a?,2,CNCC,bank,-
+3,What is cipher-text message?,2,CNCC,bank,-
+3,What is as shown?,2,CNCC,bank,-
+3,What is Book Cipher/Running-Key Cipher?,2,CNCC,bank,-
+3,"What is The idea used in book cipher, also incorrectly called?",2,CNCC,bank,-
+3,What is running-key cipher?,2,CNCC,bank,-
+3,"What is is quite simple, and is similar in principle to the?",2,CNCC,bank,-
+3,What is Encryption and Decryption?,2,CNCC,bank,-
+3,What is Basic Terms?,2,CNCC,bank,-
+3,What is Every encryption and decryption process?,2,CNCC,bank,-
+3,What is has two aspects?,2,CNCC,bank,-
+3,What is and the?,2,CNCC,bank,-
+3,What is used for encryption and decryption?,2,CNCC,bank,-
+3,What is Symmetric And Asymmetric Key Cryptography?,2,CNCC,bank,-
+3,What is Symmetric Key Cryptography and the Problem of Key Distribution?,2,CNCC,bank,-
+3,What is Diffie-Hellman Key-Exchange/Agreement Algorithm?,2,CNCC,bank,-
+3,What is Asymmetric Key Operation?,2,CNCC,bank,-
+3,What is Whitefield Diffie?,2,CNCC,bank,-
+3,What is Martin Hellman?,2,CNCC,bank,-
+3,What is devised an amazing solution to the problem of?,2,CNCC,bank,-
+3,What is key agreement?,2,CNCC,bank,-
+3,What is key exchange?,2,CNCC,bank,-
+3,What is in 1976. This solution is called the?,2,CNCC,bank,-
+3,What is only for key agreement?,2,CNCC,bank,-
+3,What is not for encryption or decryption?,2,CNCC,bank,-
+3,Explain Cryptography Techniques in detail.,7,CNCC,bank,-
+3,Explain Transposition Techniques in detail.,7,CNCC,bank,-
+3,Explain Rail-Fence Technique in detail.,7,CNCC,bank,-
+3,Explain The rail-fence technique is an example of transposition in detail.,7,CNCC,bank,-
+3,Explain It uses a simple algorithm in detail.,7,CNCC,bank,-
+3,Explain Simple Columnar Transposition Technique in detail.,7,CNCC,bank,-
+3,Explain Basic technique in detail.,7,CNCC,bank,-
+3,Explain Simple columnar transposition technique with multiple rounds in detail.,7,CNCC,bank,-
+3,Explain uses a in detail.,7,CNCC,bank,-
+3,Explain one-time pad in detail.,7,CNCC,bank,-
+3,Explain Let us apply the in detail.,7,CNCC,bank,-
+3,Explain cipher algorithm in detail.,7,CNCC,bank,-
+3,Explain to a plain-text message in detail.,7,CNCC,bank,-
+3,Explain How Are You in detail.,7,CNCC,bank,-
+3,Explain using a in detail.,7,CNCC,bank,-
+3,Explain to produce a in detail.,7,CNCC,bank,-
+3,Explain cipher-text message in detail.,7,CNCC,bank,-
+3,Explain as shown in detail.,7,CNCC,bank,-
+3,Explain Book Cipher/Running-Key Cipher in detail.,7,CNCC,bank,-
+3,"Explain The idea used in book cipher, also incorrectly called in detail.",7,CNCC,bank,-
+3,Explain running-key cipher in detail.,7,CNCC,bank,-
+3,"Explain is quite simple, and is similar in principle to the in detail.",7,CNCC,bank,-
+3,Explain Encryption and Decryption in detail.,7,CNCC,bank,-
+3,Explain Basic Terms in detail.,7,CNCC,bank,-
+3,Explain Every encryption and decryption process in detail.,7,CNCC,bank,-
+3,Explain has two aspects in detail.,7,CNCC,bank,-
+3,Explain and the in detail.,7,CNCC,bank,-
+3,Explain used for encryption and decryption in detail.,7,CNCC,bank,-
+3,Explain Symmetric And Asymmetric Key Cryptography in detail.,7,CNCC,bank,-
+3,Explain Symmetric Key Cryptography and the Problem of Key Distribution in detail.,7,CNCC,bank,-
+3,Discuss Cryptography Techniques with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss Transposition Techniques with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss Rail-Fence Technique with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss The rail-fence technique is an example of transposition with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss It uses a simple algorithm with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss Simple Columnar Transposition Technique with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss Basic technique with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss Simple columnar transposition technique with multiple rounds with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss uses a with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss one-time pad with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss Let us apply the with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss cipher algorithm with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss to a plain-text message with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss How Are You with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss using a with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss to produce a with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss cipher-text message with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss as shown with suitable diagram and applications.,15,CNCC,bank,-
+3,Discuss Book Cipher/Running-Key Cipher with suitable diagram and applications.,15,CNCC,bank,-
+3,"Discuss The idea used in book cipher, also incorrectly called with suitable diagram and applications.",15,CNCC,bank,-
+2,What is Network Security?,2,CNCC,bank,-
+2,What is Packet Filters?,2,CNCC,bank,-
+2,What is decides to either forward or discard the packet?,2,CNCC,bank,-
+2,What is It is also called as?,2,CNCC,bank,-
+2,What is screening router?,2,CNCC,bank,-
+2,What is screening filter?,2,CNCC,bank,-
+2,What is Such a?,2,CNCC,bank,-
+2,What is firewall implementation?,2,CNCC,bank,-
+2,What is from the local network to the outside world and vice versa)?,2,CNCC,bank,-
+2,What is A packet filter performs the following functions?,2,CNCC,bank,-
+2,What is Receive each packet as it arrives?,2,CNCC,bank,-
+2,What is For example?,2,CNCC,bank,-
+2,What is The rules specified in the packet filter work as follows?,2,CNCC,bank,-
+2,What is a) Incoming packets from network?,2,CNCC,bank,-
+2,What is are not allowed. They are blocked as a security precaution?,2,CNCC,bank,-
+2,What is are blocked?,2,CNCC,bank,-
+2,What is c) Incoming packets intended for a specific internal host?,2,CNCC,bank,-
+2,What is d) Outgoing packets intended for port?,2,CNCC,bank,-
+2,What is IP Address Spoofing?,2,CNCC,bank,-
+2,What is Source Routing Attacks?,2,CNCC,bank,-
+2,What is Tiny Fragment Attacks?,2,CNCC,bank,-
+2,What is a) IP Address Spoofing?,2,CNCC,bank,-
+2,What is b) Source Routing Attacks?,2,CNCC,bank,-
+2,What is c) Tiny Fragment Attacks?,2,CNCC,bank,-
+2,What is IP packets pass through a variety of physical networks?,2,CNCC,bank,-
+2,What is Application Gateways?,2,CNCC,bank,-
+2,What is An application gateway is also called a?,2,CNCC,bank,-
+2,What is proxy server?,2,CNCC,bank,-
+2,What is Application gateways typically work as follows?,2,CNCC,bank,-
+2,What is set up a connection for actual communication?,2,CNCC,bank,-
+2,What is user id?,2,CNCC,bank,-
+2,What is the password?,2,CNCC,bank,-
+2,What is required to access the services of the application gateway?,2,CNCC,bank,-
+2,What is The user provides this information to the application gateway?,2,CNCC,bank,-
+2,"What is that there is a variation of the application gateway, called as?",2,CNCC,bank,-
+2,What is circuit gateway?,2,CNCC,bank,-
+2,What is creates a new connection between itself and the remote host?,2,CNCC,bank,-
+2,What is Basic Concepts?,2,CNCC,bank,-
+2,What is TCP/IP) protocol suite?,2,CNCC,bank,-
+2,What is The TCP/IP protocol suite contains?,2,CNCC,bank,-
+2,Explain Network Security in detail.,7,CNCC,bank,-
+2,Explain Packet Filters in detail.,7,CNCC,bank,-
+2,Explain decides to either forward or discard the packet in detail.,7,CNCC,bank,-
+2,Explain It is also called as in detail.,7,CNCC,bank,-
+2,Explain screening router in detail.,7,CNCC,bank,-
+2,Explain screening filter in detail.,7,CNCC,bank,-
+2,Explain Such a in detail.,7,CNCC,bank,-
+2,Explain firewall implementation in detail.,7,CNCC,bank,-
+2,Explain from the local network to the outside world and vice versa) in detail.,7,CNCC,bank,-
+2,Explain A packet filter performs the following functions in detail.,7,CNCC,bank,-
+2,Explain Receive each packet as it arrives in detail.,7,CNCC,bank,-
+2,Explain For example in detail.,7,CNCC,bank,-
+2,Explain The rules specified in the packet filter work as follows in detail.,7,CNCC,bank,-
+2,Explain a) Incoming packets from network in detail.,7,CNCC,bank,-
+2,Explain are not allowed. They are blocked as a security precaution in detail.,7,CNCC,bank,-
+2,Explain are blocked in detail.,7,CNCC,bank,-
+2,Explain c) Incoming packets intended for a specific internal host in detail.,7,CNCC,bank,-
+2,Explain d) Outgoing packets intended for port in detail.,7,CNCC,bank,-
+2,Explain IP Address Spoofing in detail.,7,CNCC,bank,-
+2,Explain Source Routing Attacks in detail.,7,CNCC,bank,-
+2,Explain Tiny Fragment Attacks in detail.,7,CNCC,bank,-
+2,Explain a) IP Address Spoofing in detail.,7,CNCC,bank,-
+2,Explain b) Source Routing Attacks in detail.,7,CNCC,bank,-
+2,Explain c) Tiny Fragment Attacks in detail.,7,CNCC,bank,-
+2,Explain IP packets pass through a variety of physical networks in detail.,7,CNCC,bank,-
+2,Explain Application Gateways in detail.,7,CNCC,bank,-
+2,Explain An application gateway is also called a in detail.,7,CNCC,bank,-
+2,Explain proxy server in detail.,7,CNCC,bank,-
+2,Explain Application gateways typically work as follows in detail.,7,CNCC,bank,-
+2,Explain set up a connection for actual communication in detail.,7,CNCC,bank,-
+2,Discuss Network Security with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss Packet Filters with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss decides to either forward or discard the packet with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss It is also called as with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss screening router with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss screening filter with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss Such a with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss firewall implementation with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss from the local network to the outside world and vice versa) with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss A packet filter performs the following functions with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss Receive each packet as it arrives with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss For example with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss The rules specified in the packet filter work as follows with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss a) Incoming packets from network with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss are not allowed. They are blocked as a security precaution with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss are blocked with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss c) Incoming packets intended for a specific internal host with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss d) Outgoing packets intended for port with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss IP Address Spoofing with suitable diagram and applications.,15,CNCC,bank,-
+2,Discuss Source Routing Attacks with suitable diagram and applications.,15,CNCC,bank,-

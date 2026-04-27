@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .preview-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .preview-actions form {
+        margin: 0;
+    }
+
+    .preview-actions .button {
+        min-width: 180px;
+        text-align: center;
+    }
+
+    .preview-meta {
+        margin-top: 14px;
+        display: grid;
+        gap: 10px;
+    }
+
+    .paper-header-preview {
+        margin-top: 14px;
+        padding: 12px;
+        border: 1px dashed rgba(0, 209, 255, 0.55);
+        border-radius: 12px;
+        background: rgba(9, 16, 44, 0.65);
+    }
+
+    .paper-header-preview strong {
+        color: #e8efff;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .paper-header-line {
+        color: #cfe6ff;
+        font-size: 14px;
+        margin: 4px 0;
+        word-break: break-word;
+    }
+
+    .preview-edit-field {
+        min-height: 70px;
+    }
+
+    .preview-paper-panel h2 {
+        margin-bottom: 4px;
+    }
+
+    @media (max-width: 760px) {
+        .preview-actions .button {
+            width: 100%;
+            min-width: 0;
+        }
+    }
+</style>
+
+<section class="topbar">
+    <span class="section-accent">Preview Workspace</span>
+    <h1>{{ questions.exam_title }} Preview - {{ questions.subject }}</h1>
+    <p>{{ questions.summary }}. Review the generated structure before downloading the final document.</p>
+    {% if status == "added" %}
+    <p class="helper">Question added to question_codex_AI.</p>
+    {% endif %}
+</section>
+
+<section class="panel">
+    <div class="preview-actions">
+        <form id="download-form" action="/download" method="post">
+            <input type="hidden" name="subject" value="{{ subject }}">
+            <input type="hidden" name="pattern" value="{{ pattern }}">
+            <input type="hidden" name="edited_questions" id="edited-questions">
+            <input type="hidden" name="custom_header" id="custom-header-hidden">
+            <input type="hidden" name="custom_footer" id="custom-footer-hidden">
+            <input type="hidden" name="difficulty_focus" value="{{ config.difficulty_focus }}">
+            <input type="hidden" name="ai_weight" value="{{ config.ai_weight }}">
+            <input type="hidden" name="unit_coverage" value="{{ config.unit_coverage }}">
+            <input type="hidden" name="chapter_balance" value="{{ 1 if config.chapter_balance else 0 }}">
+            <input type="hidden" name="question_diversity" value="{{ 1 if config.question_diversity else 0 }}">
+            <input type="hidden" name="strict_blueprint" value="{{ 1 if config.strict_blueprint else 0 }}">
+            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                <select name="output_format" id="output-format-select" style="min-width:160px;">
+                    <option value="docx">DOCX</option>
+                    <option value="pdf">PDF</option>
+                </select>
+                <button class="button button-primary" type="submit" id="download-btn">Download DOCX</button>
+            </div>
+        </form>
+        <button id="toggle-edit-btn" class="button button-muted" type="button">Edit Questions</button>
+        <a class="button button-muted" href="/dashboard">Back to Dashboard</a>
+    </div>
+    <div class="preview-meta">
+        <div>
+            <label for="custom-header-input">Header Text (Optional)</label>
+            <input id="custom-header-input" type="text" placeholder="AI Question Paper Generator | {{ questions.subject }}">
+        </div>
+        <div>
+            <label for="custom-footer-input">Footer Text (Optional)</label>
+            <input id="custom-footer-input" type="text" placeholder="Example: Internal Assessment | Dept. of CSE">
+        </div>
+    </div>
+    <div class="paper-header-preview">
+        <strong>Live Paper Header Preview</strong>
+        <p class="paper-header-line" id="header-preview-text">AI Question Paper Generator | {{ questions.subject }}</p>
+        <p class="paper-header-line" id="footer-preview-text">Footer will appear here while editing.</p>
+    </div>
+    <p id="edit-mode-note" class="helper">Edit mode is off. Click "Edit Questions" to modify preview content.</p>
+    {% if questions.warnings %}
+    <div class="spacer"></div>
+    <div class="panel" style="border-color: rgba(248, 113, 113, 0.6); background: rgba(127, 29, 29, 0.35);">
+        <h3 style="margin:0 0 8px;">Coverage Warnings</h3>
+        <p class="helper" style="margin:0;">Some sections have fewer questions than required.</p>
+        <ul style="margin:8px 0 0 18px;">
+            {% for warn in questions.warnings %}
+            <li class="helper" style="margin:4px 0;">{{ warn }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</section>
+
+<div class="spacer"></div>
+
+{% for part_key, part in questions.parts.items() %}
+<section class="panel preview-paper-panel">
+    <h2>{{ part.title }}</h2>
+    <p class="helper">{{ part.inst }}</p>
+    <div class="spacer"></div>
+
+    {% for q in part.qs %}
+        {% if q.text is defined %}
+        <label for="q-{{ part_key }}-{{ loop.index0 }}-text">{{ q.no }}.</label>
+        <textarea
+            id="q-{{ part_key }}-{{ loop.index0 }}-text"
+            class="preview-edit-field"
+            data-part="{{ part_key }}"
+            data-index="{{ loop.index0 }}"
+            data-field="text"
+            rows="3"
+            readonly
+        >{{ q.text }}</textarea>
+        {% if q.marks is defined %}<p class="helper">{{ q.marks }} Marks</p>{% endif %}
+        {% else %}
+        <label for="q-{{ part_key }}-{{ loop.index0 }}-a">{{ q.no }}. a)</label>
+        <textarea
+            id="q-{{ part_key }}-{{ loop.index0 }}-a"
+            class="preview-edit-field"
+            data-part="{{ part_key }}"
+            data-index="{{ loop.index0 }}"
+            data-field="a"
+            rows="3"
+            readonly
+        >{{ q.a }}</textarea>
+        <p><strong>Or</strong></p>
+        <label for="q-{{ part_key }}-{{ loop.index0 }}-b">b)</label>
+        <textarea
+            id="q-{{ part_key }}-{{ loop.index0 }}-b"
+            class="preview-edit-field"
+            data-part="{{ part_key }}"
+            data-index="{{ loop.index0 }}"
+            data-field="b"
+            rows="3"
+            readonly
+        >{{ q.b }}</textarea>
+        {% endif %}
+        <div class="spacer"></div>
+    {% endfor %}
+</section>
+<div class="spacer"></div>
+{% endfor %}
+
+{% if session.role == "professor" %}
+<section class="panel">
+    <h2>Add Other Question To Bank</h2>
+    <form action="/admin/add_question" method="post">
+        <input type="hidden" name="next" value="/generate?subject={{ subject }}&pattern={{ pattern }}">
+        <div class="grid-two">
+            <div>
+                <label for="add_subject">Subject</label>
+                <select id="add_subject" name="subject" required>
+                    <option value="CNCC" {% if subject == "CNCC" %}selected{% endif %}>CNCC</option>
+                    <option value="CNS" {% if subject == "CNS" %}selected{% endif %}>CNS</option>
+                    <option value="MA" {% if subject == "MA" %}selected{% endif %}>MA</option>
+                </select>
+            </div>
+            <div>
+                <label for="add_chapter">Chapter</label>
+                <input id="add_chapter" type="number" name="chapter" min="1" max="5" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div>
+                <label for="add_mark">Marks</label>
+                <select id="add_mark" name="mark" required>
+                    <option value="2">2 (Short)</option>
+                    <option value="7">7 (Medium)</option>
+                    <option value="15">15 (Long)</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div>
+                <label for="add_question_text">Question Text</label>
+                <textarea id="add_question_text" name="question_text" rows="4" required></textarea>
+            </div>
+        </div>
+        <button type="submit" class="button button-primary">Add Question</button>
+    </form>
+</section>
+{% endif %}
+
+<script>
+let editEnabled = false;
+const toggleEditBtn = document.getElementById("toggle-edit-btn");
+const editModeNote = document.getElementById("edit-mode-note");
+
+toggleEditBtn.addEventListener("click", function () {
+    editEnabled = !editEnabled;
+    document.querySelectorAll(".preview-edit-field").forEach(function (el) {
+        el.readOnly = !editEnabled;
+    });
+    if (editEnabled) {
+        toggleEditBtn.textContent = "Lock Editing";
+        editModeNote.textContent = "Edit mode is on. Update questions, then download.";
+    } else {
+        toggleEditBtn.textContent = "Edit Questions";
+        editModeNote.textContent = 'Edit mode is off. Click "Edit Questions" to modify preview content.';
+    }
+});
+
+document.getElementById("download-form").addEventListener("submit", function () {
+    const edited = [];
+    document.querySelectorAll("textarea[data-part]").forEach(function (el) {
+        edited.push({
+            part: el.dataset.part,
+            index: el.dataset.index,
+            field: el.dataset.field,
+            text: el.value
+        });
+    });
+    document.getElementById("edited-questions").value = JSON.stringify(edited);
+    document.getElementById("custom-header-hidden").value = document.getElementById("custom-header-input").value.trim();
+    document.getElementById("custom-footer-hidden").value = document.getElementById("custom-footer-input").value.trim();
+});
+
+const formatSelect = document.getElementById("output-format-select");
+const downloadBtn = document.getElementById("download-btn");
+formatSelect.addEventListener("change", function () {
+    downloadBtn.textContent = formatSelect.value === "pdf" ? "Download PDF" : "Download DOCX";
+});
+
+const headerInput = document.getElementById("custom-header-input");
+const footerInput = document.getElementById("custom-footer-input");
+const headerPreview = document.getElementById("header-preview-text");
+const footerPreview = document.getElementById("footer-preview-text");
+function paintHeaderPreview() {
+    const headerValue = headerInput.value.trim();
+    const footerValue = footerInput.value.trim();
+    headerPreview.textContent = headerValue || "AI Question Paper Generator | {{ questions.subject }}";
+    footerPreview.textContent = footerValue || "Footer will appear here while editing.";
+}
+headerInput.addEventListener("input", paintHeaderPreview);
+footerInput.addEventListener("input", paintHeaderPreview);
+paintHeaderPreview();
+</script>
+{% endblock %}

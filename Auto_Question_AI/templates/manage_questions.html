@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+<section class="topbar">
+    <span class="section-accent">question_codex_AI</span>
+    <h1>Manage question_codex_AI</h1>
+    <p>Review all questions and add new records from one place.</p>
+    {% if status == "added" %}
+    <span class="status-pill">Question added successfully.</span>
+    {% elif status == "updated" %}
+    <span class="status-pill">Question updated successfully.</span>
+    {% endif %}
+</section>
+
+<section class="panel">
+    <div class="summary">
+    <h2>Total Questions: <span>{{ questions|length }}</span></h2>
+    <div class="search-result-note" id="question-search-note">Showing all questions</div>
+    <a class="button button-primary" href="#add-question-form">Add New Question</a>
+</div>
+</section>
+
+<div class="spacer"></div>
+
+<section class="panel">
+    <h2>Question Inventory</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Chapter</th>
+                    <th>Question</th>
+                    <th>Marks</th>
+                    <th>Difficulty</th>
+                    <th>Type</th>
+                    <th>Usage</th>
+                    <th>Source</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for q in questions %}
+                <tr data-search-item>
+                    <td>{{ q.id }}</td>
+                    <td><span class="badge badge-subject">{{ q.subject }}</span></td>
+                    <td>{{ q.chapter }}</td>
+                    <td>{{ q.question_text }}</td>
+                    <td>{{ q.mark }}</td>
+                    <td>
+                        {% if q.difficulty == 'Easy' %}
+                            <span class="badge badge-easy">{{ q.difficulty }}</span>
+                        {% elif q.difficulty == 'Medium' %}
+                            <span class="badge badge-medium">{{ q.difficulty }}</span>
+                        {% else %}
+                            <span class="badge badge-hard">{{ q.difficulty }}</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ q.question_type }}</td>
+                    <td>{{ q.usage_freq }}</td>
+                    <td>{{ q.source }}</td>
+                    <td>
+                        <a class="button button-muted button-sm" href="/admin/questions?edit_id={{ q.id }}">Edit</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="spacer"></div>
+
+{% if edit_question %}
+<section class="panel">
+    <h2>Edit Question</h2>
+    <form action="/admin/edit_question" method="POST">
+        <input type="hidden" name="id" value="{{ edit_question.id }}">
+        <div class="grid-two">
+            <div>
+                <label for="edit_subject">Subject</label>
+                <select id="edit_subject" name="subject" required>
+                    <option value="CNCC" {% if edit_question.subject == "CNCC" %}selected{% endif %}>CNCC</option>
+                    <option value="CNS" {% if edit_question.subject == "CNS" %}selected{% endif %}>CNS</option>
+                    <option value="MA" {% if edit_question.subject == "MA" %}selected{% endif %}>MA</option>
+                </select>
+            </div>
+            <div>
+                <label for="edit_chapter">Chapter</label>
+                <input id="edit_chapter" type="number" name="chapter" min="1" max="5" value="{{ edit_question.chapter }}" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="edit_mark">Marks</label>
+                <select id="edit_mark" name="mark" required>
+                    <option value="2" {% if edit_question.mark == 2 %}selected{% endif %}>2 (Short)</option>
+                    <option value="7" {% if edit_question.mark == 7 %}selected{% endif %}>7 (Medium)</option>
+                    <option value="15" {% if edit_question.mark == 15 %}selected{% endif %}>15 (Long)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="edit_question_text">Question Text</label>
+                <textarea id="edit_question_text" name="question_text" rows="4" required>{{ edit_question.question_text }}</textarea>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <button type="submit" class="button button-primary">Update Question</button>
+            <a href="/admin/questions" class="button button-muted">Cancel</a>
+        </div>
+    </form>
+</section>
+<div class="spacer"></div>
+{% endif %}
+
+<section class="panel" id="add-question-form">
+    <h2>Add New Question</h2>
+    <form action="/admin/add_question" method="POST">
+        <div class="grid-two">
+            <div>
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="CNCC">CNCC</option>
+                    <option value="CNS">CNS</option>
+                    <option value="MA">MA</option>
+                </select>
+            </div>
+            <div>
+                <label for="chapter">Chapter</label>
+                <input id="chapter" type="number" name="chapter" min="1" max="5" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="mark">Marks</label>
+                <select id="mark" name="mark" required>
+                    <option value="2">2 (Short)</option>
+                    <option value="7">7 (Medium)</option>
+                    <option value="15">15 (Long)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="question_text">Question Text</label>
+                <textarea id="question_text" name="question_text" rows="4" required></textarea>
+            </div>
+        </div>
+
+        <p class="helper">Difficulty is predicted automatically by the model after submission.</p>
+        <div class="button-row button-row-end">
+            <button type="submit" class="button button-primary">Save Question</button>
+        </div>
+    </form>
+</section>
+
+<div class="spacer"></div>
+
+<section class="panel" id="ai-question-form">
+    <h2>AI Generate Questions</h2>
+    <form action="/admin/ai_generate" method="POST">
+        <div class="grid-two">
+            <div>
+                <label for="ai_subject">Subject</label>
+                <select id="ai_subject" name="subject" required>
+                    <option value="CNCC">CNCC</option>
+                    <option value="CNS">CNS</option>
+                    <option value="MA">MA</option>
+                </select>
+            </div>
+            <div>
+                <label for="ai_chapter">Chapter</label>
+                <input id="ai_chapter" type="number" name="chapter" min="1" max="5" required>
+            </div>
+        </div>
+        <div class="grid-two form-row">
+            <div>
+                <label for="ai_mark">Marks</label>
+                <select id="ai_mark" name="mark" required>
+                    <option value="2">2 (Short)</option>
+                    <option value="7">7 (Medium)</option>
+                    <option value="15">15 (Long)</option>
+                </select>
+            </div>
+            <div>
+                <label for="ai_count">Count</label>
+                <input id="ai_count" type="number" name="count" min="1" max="20" value="5" required>
+            </div>
+        </div>
+
+        <p class="helper">AI generation uses the existing question_codex_AI to draft new variations.</p>
+        <div class="button-row button-row-end">
+            <button type="submit" class="button button-primary">Generate Questions</button>
+        </div>
+    </form>
+</section>
+</main>
+<script>
+(function () {
+    const rows = Array.from(document.querySelectorAll("tbody tr[data-search-item]"));
+    const note = document.getElementById("question-search-note");
+    if (!rows.length || !note) {
+        return;
+    }
+
+    function applyQuery(query) {
+        let visible = 0;
+        rows.forEach(function (row) {
+            const text = row.textContent.toLowerCase();
+            const matched = !query || text.indexOf(query) !== -1;
+            row.style.display = matched ? "" : "none";
+            if (matched) {
+                visible += 1;
+            }
+        });
+        note.textContent = query
+            ? ("Showing " + visible + " result(s) for \"" + query + "\"")
+            : "Showing all questions";
+    }
+
+    document.addEventListener("app:search", function (event) {
+        event.preventDefault();
+        const query = event.detail && event.detail.query ? event.detail.query : "";
+        applyQuery(query);
+    });
+})();
+</script>
+{% endblock %}

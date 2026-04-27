@@ -1,0 +1,17 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<section class="topbar">
+    <h1>Exam Submitted</h1>
+    <p>Your submission has been recorded successfully.</p>
+</section>
+
+<section class="panel">
+    <h2>Submission Details</h2>
+    <p class="helper">Subject: {{ subject }}</p>
+    <p class="helper">Pattern: {{ pattern }}</p>
+    <p class="helper">Submitted at: {{ submitted_at }}</p>
+    <div class="spacer"></div>
+    <a href="/dashboard" class="button button-primary">Return to Dashboard</a>
+</section>
+{% endblock %}

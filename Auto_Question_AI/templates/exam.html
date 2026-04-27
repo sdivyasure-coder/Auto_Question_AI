@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .exam-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .timer {
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 209, 255, 0.6);
+        background: rgba(0, 209, 255, 0.14);
+        color: #dff6ff;
+        font-weight: 600;
+        box-shadow: 0 0 18px rgba(0, 209, 255, 0.18);
+    }
+
+    .answer-box {
+        margin-top: 10px;
+    }
+</style>
+
+<section class="topbar">
+    <span class="section-accent">Live Exam</span>
+    <div class="exam-header">
+        <div>
+            <h1>Online Exam Session</h1>
+            <p>Subject: {{ questions.subject }} | Pattern: {{ pattern }}</p>
+        </div>
+        <div class="timer" id="timer">Timer: 00:00</div>
+    </div>
+</section>
+
+<form action="/exam/submit" method="post">
+    <input type="hidden" name="subject" value="{{ subject }}">
+    <input type="hidden" name="pattern" value="{{ pattern }}">
+    <input type="hidden" name="started_at" value="{{ started_at }}">
+
+    {% for part_key, part in questions.parts.items() %}
+    <section class="panel">
+        <h2>{{ part.title }}</h2>
+        <p class="helper">{{ part.inst }}</p>
+        <div class="spacer"></div>
+
+        {% for q in part.qs %}
+            {% if q.text is defined %}
+            <label>{{ q.no }}. {{ q.text }}</label>
+            <textarea class="answer-box" name="answer_{{ part_key }}_{{ loop.index0 }}" rows="4" placeholder="Type your answer..."></textarea>
+            {% else %}
+            <label>{{ q.no }}. a) {{ q.a }}</label>
+            <textarea class="answer-box" name="answer_{{ part_key }}_{{ loop.index0 }}_a" rows="4" placeholder="Type your answer..."></textarea>
+            <label style="margin-top:10px; display:block;">b) {{ q.b }}</label>
+            <textarea class="answer-box" name="answer_{{ part_key }}_{{ loop.index0 }}_b" rows="4" placeholder="Type your answer..."></textarea>
+            {% endif %}
+            <div class="spacer"></div>
+        {% endfor %}
+    </section>
+    <div class="spacer"></div>
+    {% endfor %}
+
+    <button class="button button-primary" type="submit">Submit Exam</button>
+</form>
+
+<script>
+(function () {
+    const started = new Date("{{ started_at }}");
+    const timer = document.getElementById("timer");
+    function updateTimer() {
+        const now = new Date();
+        const diff = Math.max(0, now - started);
+        const minutes = Math.floor(diff / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        timer.textContent = `Timer: ${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+})();
+</script>
+{% endblock %}
+

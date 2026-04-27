@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="topbar">
+    <span class="section-accent">Submission Editor</span>
+    <h1>Edit Exam Submission</h1>
+    <p>Update metadata and answer payload for submission #{{ submission.id }}.</p>
+</section>
+
+<section class="panel">
+    <h2>Submission Details</h2>
+    {% if error %}
+    <p class="helper" style="color:#ff9a9a;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        <div class="grid-two">
+            <div>
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" value="{{ submission.subject }}" required>
+            </div>
+            <div>
+                <label for="pattern">Pattern</label>
+                <input id="pattern" name="pattern" type="text" value="{{ submission.pattern }}" required>
+            </div>
+        </div>
+
+        <div class="grid-two">
+            <div>
+                <label for="started_at">Started At (ISO)</label>
+                <input id="started_at" name="started_at" type="text" value="{{ submission.started_at }}" required>
+            </div>
+            <div>
+                <label for="submitted_at">Submitted At (ISO)</label>
+                <input id="submitted_at" name="submitted_at" type="text" value="{{ submission.submitted_at }}" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="answers_json">Answers JSON</label>
+                <textarea id="answers_json" name="answers_json" rows="16" required>{{ submission.answers_json }}</textarea>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <button class="button button-primary" type="submit">Save Changes</button>
+            <a class="button button-muted" href="/admin/exam_submissions">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .dash-hero {
+        display: grid;
+        gap: 12px;
+        position: relative;
+    }
+
+    .dash-hero::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -6px;
+        width: 180px;
+        height: 56px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(0, 209, 255, 0.14), rgba(180, 107, 255, 0.18));
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        filter: blur(0.2px);
+    }
+
+    .dash-hero h1 {
+        font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+        margin: 0;
+    }
+
+    .dash-hero p {
+        margin: 0;
+    }
+
+    .insight-card {
+        border-radius: 16px;
+        padding: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: linear-gradient(135deg, rgba(109, 92, 255, 0.2), rgba(0, 209, 255, 0.1));
+        box-shadow: 0 12px 24px rgba(15, 24, 72, 0.35);
+    }
+
+    .insight-card h3 {
+        margin: 0 0 8px;
+    }
+
+    .chart-shell {
+        width: 100%;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background:
+            linear-gradient(180deg, rgba(10, 20, 56, 0.7), rgba(9, 14, 40, 0.65)),
+            repeating-linear-gradient(
+                0deg,
+                rgba(145, 160, 255, 0.06),
+                rgba(145, 160, 255, 0.06) 1px,
+                transparent 1px,
+                transparent 24px
+            );
+    }
+
+    .dash-toggle-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .subject-actions {
+        display: grid;
+        gap: 12px;
+    }
+</style>
+
+<section class="topbar">
+    <span class="section-accent">Dashboard</span>
+    <div class="dash-hero">
+        <h1>AI Question Paper Generator</h1>
+    </div>
+</section>
+
+<section class="grid-four">
+    <div class="stat-card">
+        <h3>3</h3>
+        <p>Active Subjects</p>
+    </div>
+    <div class="stat-card">
+        <h3>5</h3>
+        <p>Units Per Subject</p>
+    </div>
+    <div class="stat-card">
+        <h3>98.4%</h3>
+        <p>Quality Confidence</p>
+    </div>
+    <div class="stat-card">
+        <h3>24ms</h3>
+        <p>AI Selection Latency</p>
+    </div>
+</section>
+
+<div class="spacer"></div>
+
+<section class="grid-two">
+    <article class="panel" id="analytics-panel">
+        <h2>Coverage Analytics</h2>
+        <p class="helper">Monitor generation velocity, unit distribution, and blueprint balance.</p>
+        <div class="spacer"></div>
+
+        <div class="dash-toggle-row">
+            <button class="button button-muted chart-btn" data-series="papers" type="button">Paper Output</button>
+            <button class="button button-muted chart-btn" data-series="coverage" type="button">Unit Coverage</button>
+        </div>
+
+        <svg id="neon-chart" viewBox="0 0 640 250" class="chart-shell">
+            <defs>
+                <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#6d5cff"></stop>
+                    <stop offset="50%" stop-color="#00d1ff"></stop>
+                    <stop offset="100%" stop-color="#b46bff"></stop>
+                </linearGradient>
+            </defs>
+            <g stroke="rgba(255,255,255,0.1)">
+                <line x1="40" y1="30" x2="40" y2="220"></line>
+                <line x1="40" y1="220" x2="600" y2="220"></line>
+                <line x1="40" y1="180" x2="600" y2="180"></line>
+                <line x1="40" y1="140" x2="600" y2="140"></line>
+                <line x1="40" y1="100" x2="600" y2="100"></line>
+                <line x1="40" y1="60" x2="600" y2="60"></line>
+            </g>
+            <polyline id="chart-line" fill="none" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points=""></polyline>
+            <g id="chart-points"></g>
+        </svg>
+        <p id="chart-caption" class="helper">Mode: Paper Output trend over recent runs.</p>
+    </article>
+
+    <article class="panel">
+        <h2>AI Recommendations</h2>
+        <p class="helper">Smart insights to keep your blueprints balanced and efficient.</p>
+        <div class="spacer"></div>
+
+        <div class="insight-card">
+            <h3>Balance Unit 4</h3>
+            <p class="helper" style="margin:0;">Increase medium-mark questions by 12% for CNCC and CNS to keep distribution even.</p>
+        </div>
+
+        <div class="insight-card" style="margin-top: 12px;">
+            <h3>Reuse Confidence High</h3>
+            <p class="helper" style="margin:0;">MA Unit 2 and Unit 5 show highest reuse scores for practice papers.</p>
+        </div>
+
+        <div class="insight-card" style="margin-top: 12px;">
+            <h3>Alert</h3>
+            <p class="helper" style="margin:0;">Part B pair diversity dipped below target in the latest MA run.</p>
+        </div>
+    </article>
+</section>
+
+<div class="spacer"></div>
+
+<section class="panel">
+    <h2>Online Exam Console</h2>
+    <p class="helper">Launch timed exams and review submissions in one place.</p>
+    <div class="spacer"></div>
+    <div class="subject-actions">
+        <a href="/exam" class="button button-primary">Start Online Exam</a>
+        {% if role == "professor" %}
+        <a href="/admin/exam_submissions" class="button button-muted">View Submissions</a>
+        {% endif %}
+    </div>
+</section>
+
+<div class="spacer"></div>
+
+{% if role == "professor" %}
+<section class="panel">
+    <h2>question_codex_AI</h2>
+    <p class="helper">Manage questions, add new items, and keep coverage healthy.</p>
+    <div class="spacer"></div>
+    <a href="/admin/questions" class="button button-muted">Manage question_codex_AI</a>
+</section>
+{% elif role == "student" %}
+<section class="panel">
+    <h2>Student Workspace</h2>
+    <p class="helper">Generate and download papers for quick revision cycles.</p>
+    <div class="spacer"></div>
+    <a href="/generate" class="button button-primary">Generate Paper</a>
+</section>
+{% else %}
+<section class="panel">
+    <h2>Access Restricted</h2>
+    <p class="helper">Your role is not authorized for dashboard operations.</p>
+</section>
+{% endif %}
+
+<script>
+(function () {
+    const datasets = {
+        papers: [44, 58, 52, 74, 68, 90, 86],
+        coverage: [28, 38, 54, 66, 72, 88, 96]
+    };
+
+    const labels = {
+        papers: "Mode: Paper Output trend over recent runs.",
+        coverage: "Mode: Unit Coverage saturation across generation cycles."
+    };
+
+    const line = document.getElementById("chart-line");
+    const pointsGroup = document.getElementById("chart-points");
+    const caption = document.getElementById("chart-caption");
+    const buttons = document.querySelectorAll(".chart-btn");
+
+    function draw(name) {
+        const values = datasets[name];
+        const x0 = 60;
+        const yMax = 210;
+        const yMin = 40;
+        const width = 520;
+        const step = width / (values.length - 1);
+        const maxV = 100;
+
+        const pts = values.map((v, i) => {
+            const x = x0 + (i * step);
+            const y = yMax - ((v / maxV) * (yMax - yMin));
+            return { x, y, v };
+        });
+
+        line.setAttribute("points", pts.map(p => `${p.x},${p.y}`).join(" "));
+        pointsGroup.innerHTML = pts.map(p =>
+            `<circle cx="${p.x}" cy="${p.y}" r="5" fill="#0f173c" stroke="#00d1ff" stroke-width="2"><title>${p.v}</title></circle>`
+        ).join("");
+        caption.textContent = labels[name];
+
+        buttons.forEach(btn => {
+            const active = btn.dataset.series === name;
+            btn.style.borderColor = active ? "rgba(0,209,255,.85)" : "rgba(109,92,255,.35)";
+            btn.style.boxShadow = active ? "0 0 18px rgba(0,209,255,.35)" : "none";
+        });
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => draw(btn.dataset.series));
+    });
+
+    draw("papers");
+})();
+</script>
+{% endblock %}

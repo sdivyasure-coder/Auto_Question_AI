@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | AI Question Paper Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --primary: #00ff9c;
+            --secondary: #00f0ff;
+            --accent: #8b5cf6;
+            --primary-dark: #00d487;
+            --primary-soft: rgba(0, 255, 156, 0.18);
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --border: rgba(0, 255, 156, 0.3);
+            --shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "JetBrains Mono", monospace;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                linear-gradient(transparent 95%, rgba(0, 255, 156, 0.15) 96%),
+                linear-gradient(90deg, transparent 95%, rgba(0, 240, 255, 0.15) 96%);
+            background-size: 44px 44px, 44px 44px;
+            pointer-events: none;
+            opacity: 0.5;
+            animation: gridDrift 14s linear infinite;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 18% 28%, rgba(0, 255, 156, 0.18), transparent 50%),
+                radial-gradient(circle at 82% 22%, rgba(0, 240, 255, 0.16), transparent 52%),
+                radial-gradient(circle at 60% 82%, rgba(139, 92, 246, 0.16), transparent 54%);
+            pointer-events: none;
+            animation: pulseGlow 10s ease-in-out infinite alternate;
+        }
+
+        .page {
+            position: relative;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            align-items: stretch;
+            padding: 0;
+            animation: pageFade 0.5s ease both;
+        }
+
+        .hero {
+            position: relative;
+            display: grid;
+            place-items: center;
+            padding: 40px;
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(0, 255, 156, 0.2), rgba(0, 240, 255, 0.18), rgba(139, 92, 246, 0.18));
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 156, 0.32), transparent 42%),
+                radial-gradient(circle at 80% 30%, rgba(0, 240, 255, 0.32), transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.28), transparent 48%);
+            opacity: 0.9;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: rgba(0, 255, 156, 0.18);
+            top: 10%;
+            left: 12%;
+            animation: floatOrb 10s ease-in-out infinite alternate;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 420px;
+            text-align: left;
+            animation: fadeSlide 0.7s ease both;
+        }
+
+        .hero h2 {
+            margin: 0 0 12px;
+            font-family: "Orbitron", sans-serif;
+            font-size: 2.1rem;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            margin: 0;
+            color: rgba(230, 237, 243, 0.82);
+            line-height: 1.6;
+        }
+
+        .hero-illustration {
+            margin-top: 28px;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px;
+            padding: 18px;
+            background: rgba(22, 27, 34, 0.6);
+            border: 1px solid rgba(0, 255, 156, 0.3);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(6px);
+        }
+
+        .hero-illustration .line {
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(0, 255, 156, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .hero-illustration .line:last-child {
+            width: 72%;
+            background: rgba(0, 240, 255, 0.6);
+        }
+
+        .auth-card {
+            width: min(440px, 92vw);
+            padding: 36px 34px;
+            border-radius: 24px;
+            background: rgba(22, 27, 34, 0.86);
+            border: 1px solid var(--border);
+            box-shadow: 0 0 24px rgba(0, 255, 156, 0.25), var(--shadow);
+            backdrop-filter: blur(10px);
+            animation: fadeSlide 0.7s ease both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-card::after {
+            content: "";
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            top: -8%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 156, 0.8), transparent);
+            animation: scanLine 3.6s ease-in-out infinite;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .brand-mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 12px 24px rgba(0, 255, 156, 0.3);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-family: "Orbitron", sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 8px 0 0;
+            color: var(--text-muted);
+        }
+
+        .subtle-note {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        label {
+            display: block;
+            margin: 18px 0 8px;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .float-field {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .float-field label {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            background: rgba(13, 17, 23, 0.85);
+            padding: 0 6px;
+            transition: transform 0.2s ease, color 0.2s ease, font-size 0.2s ease;
+            pointer-events: none;
+        }
+
+        .float-field input:focus + label,
+        .float-field input:not(:placeholder-shown) + label {
+            transform: translateY(-18px);
+            font-size: 0.68rem;
+            color: var(--secondary);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 255, 156, 0.25);
+            background: rgba(13, 17, 23, 0.7);
+            color: var(--text);
+            font: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: rgba(0, 255, 156, 0.8);
+            box-shadow: 0 0 0 4px rgba(0, 255, 156, 0.18);
+            background: rgba(13, 17, 23, 0.9);
+        }
+
+        input:invalid:focus {
+            animation: shake 0.3s ease;
+            border-color: rgba(255, 77, 77, 0.8);
+            box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.2);
+        }
+
+        .button {
+            margin-top: 22px;
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 22px rgba(0, 255, 156, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 28px rgba(0, 240, 255, 0.4);
+            filter: brightness(1.05);
+        }
+
+        .button::after {
+            content: "";
+            position: absolute;
+            inset: -120% auto auto -120%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(0, 255, 156, 0.35), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .button:hover::after {
+            opacity: 1;
+        }
+
+        .button.is-loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .button.is-loading::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--secondary);
+            position: absolute;
+            right: 16px;
+            animation: spin 0.7s linear infinite;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
+            background: rgba(0, 255, 156, 0.35);
+            pointer-events: none;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 14px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .meta a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .typing {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid var(--secondary);
+            animation: typing 2.6s steps(28, end), blink 0.7s step-end infinite;
+        }
+
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            opacity: 0.7;
+            clip-path: inset(0 0 0 0);
+        }
+
+        .glitch::before {
+            color: var(--secondary);
+            animation: glitchShift 2.6s infinite;
+        }
+
+        .glitch::after {
+            color: var(--accent);
+            animation: glitchShift 3.2s infinite reverse;
+        }
+
+        .fx-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .fx-layer span {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(0, 255, 156, 0.5);
+            box-shadow: 0 0 12px rgba(0, 255, 156, 0.6);
+            animation: floatParticle 8s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .fx-layer span:nth-child(2n) {
+            background: rgba(0, 240, 255, 0.5);
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+            animation-duration: 10s;
+        }
+
+        .fx-layer span:nth-child(1) { top: 12%; left: 18%; }
+        .fx-layer span:nth-child(2) { top: 38%; left: 8%; }
+        .fx-layer span:nth-child(3) { top: 28%; left: 68%; }
+        .fx-layer span:nth-child(4) { top: 62%; left: 82%; }
+        .fx-layer span:nth-child(5) { top: 78%; left: 32%; }
+        .fx-layer span:nth-child(6) { top: 16%; left: 78%; }
+        .fx-layer span:nth-child(7) { top: 42%; left: 52%; }
+        .fx-layer span:nth-child(8) { top: 88%; left: 70%; }
+        .fx-layer span:nth-child(9) { top: 74%; left: 10%; }
+        .fx-layer span:nth-child(10) { top: 8%; left: 52%; }
+        .fx-layer span:nth-child(11) { top: 52%; left: 28%; }
+        .fx-layer span:nth-child(12) { top: 30%; left: 88%; }
+
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 28px 22px;
+            }
+
+            .meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .page {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 42vh;
+            }
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatOrb {
+            from { transform: translateY(0) translateX(0) scale(1); }
+            to { transform: translateY(18px) translateX(12px) scale(1.05); }
+        }
+
+        @keyframes scanLine {
+            0% { transform: translateY(0); opacity: 0.2; }
+            50% { transform: translateY(260px); opacity: 0.6; }
+            100% { transform: translateY(0); opacity: 0.2; }
+        }
+
+        @keyframes gridDrift {
+            from { background-position: 0 0, 0 0; }
+            to { background-position: 120px 80px, 80px 120px; }
+        }
+
+        @keyframes pulseGlow {
+            from { opacity: 0.6; }
+            to { opacity: 0.9; }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes ripple {
+            to { transform: scale(2.5); opacity: 0; }
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(-4px); }
+            60% { transform: translateX(4px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        @keyframes glitchShift {
+            0% { transform: translate(0); }
+            20% { transform: translate(-1px, 1px); }
+            40% { transform: translate(1px, -1px); }
+            60% { transform: translate(-2px, 0); }
+            80% { transform: translate(2px, 1px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes pageFade {
+            from { opacity: 0; filter: blur(6px); }
+            to { opacity: 1; filter: blur(0); }
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(-14px); opacity: 0.8; }
+            100% { transform: translateY(0); opacity: 0.4; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fx-layer" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="page">
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="glitch" data-text="AI Question Paper Generator">
+                    <span class="typing">AI Question Paper Generator</span>
+                </h2>
+                <p>Design smart assessments faster with adaptive difficulty, rich analytics, and secure delivery workflows.</p>
+                <div class="hero-illustration" aria-hidden="true">
+                    <div class="line" style="width: 90%;"></div>
+                    <div class="line" style="width: 82%;"></div>
+                    <div class="line" style="width: 96%;"></div>
+                    <div class="line" style="width: 68%;"></div>
+                </div>
+            </div>
+        </section>
+        <div class="auth-card">
+            <div class="brand">
+                <div class="brand-mark">AQ</div>
+                <div>
+                    <h1>Welcome back</h1>
+                    <p class="subtle-note">Sign in to generate AI-powered question papers.</p>
+                </div>
+            </div>
+            <form>
+                <div class="float-field">
+                    <input id="email" type="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="float-field">
+                    <input id="password" type="password" placeholder=" " required>
+                    <label for="password">Password</label>
+                </div>
+                <button class="button" type="submit">Login</button>
+                <div class="meta">
+                    <span>Secure access for educators.</span>
+                    <a href="#">Forgot password?</a>
+                </div>
+            </form>
+            <div class="footer">New here? <a href="/register">Create an account</a></div>
+        </div>
+    </div>
+    <script>
+    (function () {
+        document.querySelectorAll(".button").forEach(function (btn) {
+            btn.addEventListener("click", function (event) {
+                const ripple = document.createElement("span");
+                ripple.className = "ripple";
+                const rect = btn.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + "px";
+                ripple.style.left = (event.clientX - rect.left - size / 2) + "px";
+                ripple.style.top = (event.clientY - rect.top - size / 2) + "px";
+                btn.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

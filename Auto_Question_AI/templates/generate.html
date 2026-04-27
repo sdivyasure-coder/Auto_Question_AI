@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .gen-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+        gap: 16px;
+    }
+
+    .gen-panel {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .gen-panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 18px;
+        right: 18px;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(109, 92, 255, 0.9), rgba(0, 209, 255, 0.9));
+    }
+
+    .control-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .control-card {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 12px;
+        background: rgba(10, 16, 44, 0.62);
+    }
+
+    .control-card label {
+        margin-bottom: 8px;
+        color: #e2e8f0;
+    }
+
+    .value-tag {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        border: 1px solid rgba(0, 209, 255, 0.46);
+        color: #d8f6ff;
+        background: rgba(0, 209, 255, 0.16);
+    }
+
+    .toggle-row {
+        display: grid;
+        gap: 10px;
+    }
+
+    .toggle-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(9, 15, 40, 0.72);
+    }
+
+    .toggle-item span {
+        font-size: 14px;
+        color: #e2e8f0;
+    }
+
+    .switch {
+        appearance: none;
+        width: 48px;
+        height: 26px;
+        border-radius: 999px;
+        border: 1px solid rgba(109, 92, 255, 0.58);
+        background: rgba(9, 15, 40, 0.9);
+        position: relative;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .switch::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        top: 3px;
+        left: 4px;
+        background: #e2e8f0;
+        transition: transform 0.2s ease;
+    }
+
+    .switch:checked {
+        background: linear-gradient(120deg, #6d5cff, #00d1ff);
+        border-color: rgba(0, 209, 255, 0.9);
+    }
+
+    .switch:checked::after {
+        transform: translateX(21px);
+        background: #f8fafc;
+    }
+
+    .gen-submit {
+        margin-top: 16px;
+        width: 100%;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        padding: 12px 14px;
+        border-radius: 14px;
+    }
+
+    .readout h3 {
+        margin: 0 0 10px;
+        color: #e0e7ff;
+    }
+
+    .readout-line {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        padding: 8px 0;
+        color: #cbd5f5;
+        font-size: 14px;
+    }
+
+    .readout-line strong {
+        color: #f8fafc;
+    }
+
+    .ai-loading-banner {
+        margin-top: 12px;
+        display: none;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 209, 255, 0.35);
+        background: rgba(0, 209, 255, 0.14);
+        color: #e0f7ff;
+        font-size: 0.9rem;
+    }
+
+    .ai-loading-banner.is-visible {
+        display: inline-flex;
+    }
+
+    @media (max-width: 980px) {
+        .gen-layout {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 720px) {
+        .control-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<section class="topbar">
+    <span class="section-accent">Generator Studio</span>
+    <h1>Generate Question Paper</h1>
+    <p>Choose subject, pattern, and blueprint controls to create a preview.</p>
+</section>
+
+<div class="gen-layout">
+    <section class="panel gen-panel">
+        <h2>Generation Controls</h2>
+        <p class="helper">Tuned settings for balanced coverage and question diversity.</p>
+        <div class="spacer"></div>
+        <form action="/generate" method="POST" data-ai-generate-form>
+            <div class="control-grid">
+                <div class="control-card">
+                    <label for="subject">Subject Stream</label>
+                    <select id="subject" name="subject" required>
+                        {% for sub in subjects %}
+                        <option value="{{ sub }}">{{ sub }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="control-card">
+                    <label for="pattern">Exam Pattern</label>
+                    <select id="pattern" name="pattern" required>
+                        <option value="regular">Regular (100 Marks)</option>
+                        <option value="75">Mid-Sem (75 Marks)</option>
+                        <option value="cia50">CIA (50 Marks)</option>
+                    </select>
+                </div>
+                <div class="control-card">
+                    <label for="difficulty-focus">Difficulty Focus</label>
+                    <input id="difficulty-focus" name="difficulty_focus" type="range" min="0" max="100" value="55">
+                    <span class="value-tag" id="difficulty-focus-value">Balanced 55%</span>
+                </div>
+                <div class="control-card">
+                    <label for="ai-weight">AI Selection Weight</label>
+                    <input id="ai-weight" name="ai_weight" type="range" min="0" max="100" value="72">
+                    <span class="value-tag" id="ai-weight-value">Score Priority 72%</span>
+                </div>
+                <div class="control-card">
+                    <label for="unit-coverage">Unit Coverage Strength</label>
+                    <input id="unit-coverage" name="unit_coverage" type="range" min="0" max="100" value="80">
+                    <span class="value-tag" id="unit-coverage-value">Coverage 80%</span>
+                </div>
+                <div class="control-card">
+                    <label>Smart Toggles</label>
+                    <div class="toggle-row">
+                        <div class="toggle-item">
+                            <span>Chapter Balance</span>
+                            <input class="switch" name="chapter_balance" type="checkbox" checked>
+                        </div>
+                        <div class="toggle-item">
+                            <span>Question Diversity</span>
+                            <input class="switch" name="question_diversity" type="checkbox" checked>
+                        </div>
+                        <div class="toggle-item">
+                            <span>Strict Blueprint Mode</span>
+                            <input class="switch" name="strict_blueprint" type="checkbox">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="button button-primary gen-submit" id="generate-submit-btn">Generate Preview</button>
+            <div class="ai-loading-banner" id="generate-loading-banner">
+                <span class="spinner" aria-hidden="true"></span>
+                <span>AI is generating questions</span>
+            </div>
+        </form>
+    </section>
+
+    <section class="panel gen-panel readout">
+        <h3>Control Readout</h3>
+        <div class="readout-line"><span>Pipeline Mode</span><strong>Academic Structured</strong></div>
+        <div class="readout-line"><span>Latency Class</span><strong>Low (24ms)</strong></div>
+        <div class="readout-line"><span>Output Target</span><strong>DOCX + Preview</strong></div>
+        <div class="readout-line"><span>Question Engine</span><strong>Rule + AI Ranking</strong></div>
+        <div class="readout-line"><span>Unit Integrity</span><strong>Preserved</strong></div>
+        <p class="helper">Sliders and toggles are visual control presets. Subject and pattern drive backend generation.</p>
+    </section>
+</div>
+
+<script>
+    function bindRange(id, label, prefix) {
+        const input = document.getElementById(id);
+        const out = document.getElementById(label);
+        if (!input || !out) {
+            return;
+        }
+        const paint = function () {
+            out.textContent = prefix + " " + input.value + "%";
+        };
+        input.addEventListener("input", paint);
+        paint();
+    }
+
+    bindRange("difficulty-focus", "difficulty-focus-value", "Balanced");
+    bindRange("ai-weight", "ai-weight-value", "Score Priority");
+    bindRange("unit-coverage", "unit-coverage-value", "Coverage");
+
+    const generateForm = document.querySelector("form[data-ai-generate-form]");
+    const generateBtn = document.getElementById("generate-submit-btn");
+    const loadingBanner = document.getElementById("generate-loading-banner");
+    if (generateForm && generateBtn && loadingBanner) {
+        generateForm.addEventListener("submit", function () {
+            generateBtn.disabled = true;
+            generateBtn.textContent = "Generating...";
+            loadingBanner.classList.add("is-visible");
+        });
+    }
+</script>
+{% endblock %}

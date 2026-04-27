@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="topbar">
+    <span class="section-accent">Submission Insights</span>
+    <h1>Exam Submissions</h1>
+    <p>Review submissions captured from online exam sessions.</p>
+</section>
+
+<section class="panel">
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User</th>
+                    <th>Subject</th>
+                    <th>Pattern</th>
+                    <th>Started</th>
+                    <th>Submitted</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in submissions %}
+                <tr>
+                    <td>{{ s.id }}</td>
+                    <td>{{ s.username }}</td>
+                    <td>{{ s.subject }}</td>
+                    <td>{{ s.pattern }}</td>
+                    <td>{{ s.started_at }}</td>
+                    <td>{{ s.submitted_at }}</td>
+                    <td>
+                        <a class="button button-muted button-sm" href="/admin/exam_submissions/{{ s.id }}/edit">Edit</a>
+                        <form method="post" action="/admin/exam_submissions/{{ s.id }}/delete" style="display:inline;">
+                            <button
+                                class="button button-muted button-sm"
+                                type="submit"
+                                onclick="return confirm('Delete submission #{{ s.id }}?');"
+                            >
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}
+

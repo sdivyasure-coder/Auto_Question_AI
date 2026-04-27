@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="topbar">
+    <h1>Admin Dashboard</h1>
+    <p>Track question_codex_AI quality and run maintenance actions.</p>
+</section>
+
+<section class="grid-four">
+    <div class="stat-card">
+        <h3>{{ stats.total_questions }}</h3>
+        <p>Total Questions</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{ stats.easy }}</h3>
+        <p>Easy Questions</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{ stats.medium }}</h3>
+        <p>Medium Questions</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{ stats.hard }}</h3>
+        <p>Hard Questions</p>
+    </div>
+</section>
+
+<div class="spacer"></div>
+
+<section class="grid-two">
+    <div class="panel">
+        <h2>System Actions</h2>
+        <p class="helper">Use these actions to maintain model quality and question inventory.</p>
+        <div class="spacer"></div>
+        <a href="/admin/train_model" class="button button-primary" onclick="return confirm('Retrain ML Model?')">Retrain ML Model</a>
+        <a href="/admin/questions" class="button button-muted">Manage question_codex_AI</a>
+        <a href="/generate" class="button button-success">Generate New Paper</a>
+        <p class="helper">Retraining updates difficulty predictions based on recently added questions.</p>
+    </div>
+
+    <div class="panel">
+        <h2>Active Subjects</h2>
+        {% if stats.subjects %}
+            <ul>
+                {% for sub in stats.subjects %}
+                <li>{{ sub }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="helper">No subjects available.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
